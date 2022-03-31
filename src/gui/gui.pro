@@ -2,13 +2,12 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-CONFIG += c++11
-
+CONFIG += c++11 debug
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
-INCLUDEPATH *= headers
+INCLUDEPATH *= headers ../steammath
 
 FORMS += \
     parniscitacka.ui
@@ -18,14 +17,12 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-# By default, you assign a directory to the SUBDIRS variable, and qmake looks
-# inside that directory for a <dirname>.pro file.
-SUBDIRS=steammathlib
+# You can also use this to specify dependencies.  In this case, we dont want
+# the build target to run until after the logic and gui targets are complete.
+build.depends = libsteammath
 
 # build.file = build.pro # This specifies the .pro file to use
+LIBS += "$$OUT_PWD/../steammath/steammath.o"
 
-# You can also use this to specify dependencies.  In this case, we don't want
-# the build target to run until after the logic and gui targets are complete.
-build.depends = steammathlib
 
-include(parniscitacka.pri)
+include(files.pri)

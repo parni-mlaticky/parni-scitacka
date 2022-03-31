@@ -1,4 +1,4 @@
 #!/bin/sh
 # 🤡
-PROJECT_NAME="parniscitacka"
+PROJECT_NAME="files"
 qmake -project -o TEMP-${PROJECT_NAME} && sed '1,/^# Input/d' TEMP-${PROJECT_NAME}.pro > ${PROJECT_NAME}.pri && rm TEMP-${PROJECT_NAME}.pro
