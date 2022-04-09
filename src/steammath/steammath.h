@@ -13,6 +13,7 @@
 class SteamMath {
 	public:
 		static int include_test(int one);
+
 		/**
 		 * @brief Method to summate numbers
 		 *
@@ -21,6 +22,7 @@ class SteamMath {
 		 * @return Summation of the parameter numbers
 		 */
 		static double sum(double x, double y);
+
 		/**
 		 * @brief Method to substract numbers
 		 *
@@ -29,6 +31,7 @@ class SteamMath {
 		 * @return Substraction of the parameter numbers
 		 */
 		static double sub(double x, double y);
+
 		/**
 		 * @brief Method to multiply numbers
 		 *
@@ -37,6 +40,7 @@ class SteamMath {
 		 * @return Multiplication of the parameter numbers
 		 */
 		static double mul(double x, double y);
+
 		/**
 		 * @brief Method to divide numbers
 		 *
@@ -45,6 +49,7 @@ class SteamMath {
 		 * @return Division of the parameter numbers
 		 */
 		static double div(double x, double y);
+
 		/**
 		 * @brief Method to get a factorial of a number
 		 *
@@ -52,6 +57,7 @@ class SteamMath {
 		 * @return Factorial of the parameter number
 		 */
 		static double fact(int x);
+
 		/**
 		 * @brief Method to power number to an exponent
 		 *
@@ -60,6 +66,7 @@ class SteamMath {
 		 * @return Power of the parameter number to the parameter exponent
 		 */
 		static double pow(double x, int y);
+
 		/**
 		 * @brief Method to get nth root
 		 *
