@@ -5,6 +5,8 @@
 #include <iostream>
 #include <string>
 
+using namespace sm;
+
 int main(int argc, char *argv[])
 {
     int one = SteamMath::include_test(1);
