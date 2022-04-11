@@ -19,11 +19,11 @@ protected:
 class testCase2 : public :: testing ::Test{
 protected:
     virtual void SetUp(){
-        a = 4.0;
-        b = 8.0;
+        a = 4;
+        b = 8;
     }
-    double a;
-    double b;
+    int a;
+    int b;
 };
 
 
@@ -42,6 +42,7 @@ TEST_F(testCase1, mulTest){
 
 TEST_F(testCase1, divTest){
     EXPECT_TRUE(SteamMath :: div(a, b) == 1);
+    EXPECT_THROW(SteamMath :: div(a, 0.0), sm :: DivisionByZero);
 }
 
 TEST_F(testCase2, factTest){
@@ -52,6 +53,7 @@ TEST_F(testCase2, factTest){
 
 TEST_F(testCase1, powTest){
     EXPECT_TRUE(SteamMath :: pow(a, 2) == 2.25);
+    EXPECT_TRUE(SteamMath :: pow(a, 0.0) == 1);
 }
 
 TEST_F(testCase2, rootTest){
@@ -61,10 +63,6 @@ TEST_F(testCase2, rootTest){
 
 TEST_F(testCase2, divTest){
     EXPECT_THROW(SteamMath :: div(a, 0.0), sm :: DivisionByZero);
-}
-
-TEST_F(testCase2, powTest){
-    EXPECT_TRUE(SteamMath :: pow(a, 0.0) == 1);
 }
 
 
