@@ -1,4 +1,4 @@
 TEMPLATE = subdirs
 
-SUBDIRS = steammath mathtest
-mathtest.depends = steammath
+SUBDIRS = steammath mathtest GoogleTest
+mathtest.depends = steammath GoogleTest
