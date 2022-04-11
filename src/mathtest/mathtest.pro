@@ -18,5 +18,5 @@ INCLUDEPATH += . ../steammath/
 
 LIBS += "$$OUT_PWD/../steammath/steammath.o"
 
-
+include(../GoogleTest/GoogleTest.pri)
 include(files.pri)
