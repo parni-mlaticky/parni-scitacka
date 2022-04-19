@@ -9,13 +9,13 @@ QT_END_NAMESPACE
 
 class ParniScitacka : public QMainWindow
 {
-    Q_OBJECT
+	Q_OBJECT
 
 public:
-    ParniScitacka(QWidget *parent = nullptr);
-    ~ParniScitacka();
+	ParniScitacka(QWidget *parent = nullptr);
+	~ParniScitacka();
 
 private:
-    Ui::ParniScitacka *ui;
+	Ui::ParniScitacka *ui;
 };
 #endif // PARNISCITACKA_H
