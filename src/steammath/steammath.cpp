@@ -69,8 +69,12 @@ double SteamMath::div(double x, double y) {
 }
 
 double SteamMath::fact(int x) {
-    if (x < 1) {
+    if (x < 0) {
         throw PositiveNonZeroNumberRequired("x has to be greater then zero");
+    }
+
+    if (x == 0 || x == 1) {
+        return 1;
     }
 
     std::feclearexcept(FE_ALL_EXCEPT);
