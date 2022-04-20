@@ -6,7 +6,7 @@
 
 using namespace sm;
 
-class testCase1 : public :: testing ::Test{
+class doubles : public :: testing ::Test{
 protected:
 	virtual void SetUp(){
 		a = 1.5;
@@ -16,7 +16,7 @@ protected:
 	double b;
 };
 
-class testCase2 : public :: testing ::Test{
+class integers : public :: testing ::Test{
 protected:
 	virtual void SetUp(){
 		a = 4;
@@ -27,40 +27,40 @@ protected:
 };
 
 
-TEST_F(testCase1, addTest){
+TEST_F(doubles, addTest){
 	EXPECT_TRUE(SteamMath :: sum(a, b) == 3.0);
 	EXPECT_TRUE(SteamMath :: sum(a, -5) == -3.5);
 }
 
-TEST_F(testCase1, subTest){
+TEST_F(doubles, subTest){
 EXPECT_TRUE(SteamMath :: sub(a, b) == 0.0);
 EXPECT_TRUE(SteamMath :: sub(a, -5) == 6.5);
 }
 
-TEST_F(testCase1, mulTest){
+TEST_F(doubles, mulTest){
 	EXPECT_TRUE(SteamMath :: mul(a, b) == 2.25);
 	EXPECT_TRUE(SteamMath :: mul(a, 0.0) == 0.0);
 	EXPECT_TRUE(SteamMath :: mul(a, -2) == -3);
 }
 
-TEST_F(testCase1, divTest){
+TEST_F(doubles, divTest){
 	EXPECT_TRUE(SteamMath :: div(a, b) == 1);
 	EXPECT_TRUE(SteamMath :: div(a, -1) == -a);
 	EXPECT_THROW(SteamMath :: div(a, 0.0), sm :: DivisionByZero);
 }
 
-TEST_F(testCase2, factTest){
+TEST_F(integers, factTest){
 	EXPECT_TRUE(SteamMath :: fact(a) == 24);
 	EXPECT_TRUE(SteamMath :: fact(b) == 1);
 	EXPECT_THROW(SteamMath :: fact(-1), sm:: OutputUndefined);
 }
 
-TEST_F(testCase1, powTest){
+TEST_F(doubles, powTest){
 	EXPECT_TRUE(SteamMath :: pow(a, 2) == 2.25);
 	EXPECT_TRUE(SteamMath :: pow(a, 0.0) == 1);
 }
 
-TEST_F(testCase2, rootTest){
+TEST_F(integers, rootTest){
 	EXPECT_TRUE(SteamMath :: root(a, 2) == 2);
 	EXPECT_TRUE(SteamMath :: root(b, 3) == 2);
 	double result = SteamMath :: root(b, -2);
