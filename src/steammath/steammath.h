@@ -27,11 +27,11 @@ namespace sm {
 			static double sum(double x, double y);
 
 			/**
-			* @brief Method to substract numbers
+			* @brief Method to subtract numbers
 			*
 			* @param x minuend
-			* @param y substrahend
-			* @return Substraction of the parameter numbers
+			* @param y subtrahend
+			* @return Subtraction of the parameter numbers
 			*/
 			static double sub(double x, double y);
 
@@ -73,7 +73,7 @@ namespace sm {
 			/**
 			* @brief Method to get nth root
 			*
-			* @param x radicant
+			* @param x radicand
 			* @param y degree
 			* @return Root of the parameter number to the parameter degree
 			*/
@@ -101,7 +101,7 @@ namespace sm {
 	};
 
 	/**
-	 * Exception signaling that an division by zero has occoured in a calculation
+	 * Exception signaling that division by zero has occurred in a calculation
 	 * @param message A message detailing the event.
 	 */
 	class DivisionByZero : sm::SmException {
