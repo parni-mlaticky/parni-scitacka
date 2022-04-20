@@ -53,7 +53,7 @@ TEST_F(doubles, divTest){
 
 TEST_F(integers, factTest){
 	EXPECT_TRUE(SteamMath::fact(a) == 24);
-	EXPECT_TRUE(SteamMath::fact(b) == 1);
+	EXPECT_TRUE(SteamMath::fact(b) == 40320);
 	EXPECT_THROW(SteamMath::fact(-1), sm::OutputUndefined);
 }
 
@@ -71,13 +71,28 @@ TEST_F(integers, rootTest){
 	EXPECT_THROW(SteamMath::root(-4, 2), sm::OutputUndefined);
 }
 
-TEST_F(integers, rootTest){
-	auto rootVector = std::vector<double>;
+TEST_F(doubles, quadRootTest){
+	std::vector<double> rootVector;
 	rootVector = SteamMath::quadRoot(1, 3, 2);
-	EXPECT_TRUE(rootVector[0] == -1.0 && rootVector[1] == -2.0);
+	EXPECT_TRUE(rootVector.at(0) == -1.0 && rootVector.at(1) == -2.0);
 	rootVector = SteamMath::quadRoot(-2.5, 2.5, 4.5);
-	EXPECT_TRUE(std::abs(rootVector[0]) - (-0.931782106327635) < EPSILON);
-	EXPECT_TRUE(std::abs(rootVector[1]) - 1.931782106327635 < EPSILON);
+	EXPECT_TRUE(std::abs(rootVector.at(0) - (-0.931782106327635)) < EPSILON);
+	EXPECT_TRUE(std::abs(rootVector.at(1) - 1.931782106327635) < EPSILON);
+	rootVector = SteamMath::quadRoot(0, 3, 3);
+	EXPECT_TRUE(rootVector.at(0) == -1.0);
+	EXPECT_TRUE(rootVector.at(1) == -1.0);
+	rootVector = SteamMath::quadRoot(1.0, 0, -1.0);
+	EXPECT_TRUE(rootVector.at(0) == -1.0);
+	EXPECT_TRUE(rootVector.at(1) == 1.0);
+	rootVector = SteamMath::quadRoot(2, 4, 0);
+	EXPECT_TRUE(rootVector.at(0) == 0.0);
+	EXPECT_TRUE(rootVector.at(1) == -2.0);
+	rootVector = SteamMath::quadRoot(3, 0, 0);
+	EXPECT_TRUE(rootVector.at(0) == 0.0);
+	EXPECT_TRUE(rootVector.at(1) == 0.0);
+
+	EXPECT_THROW(SteamMath::quadRoot(0, 0, 3), sm::OutputUndefined);
+	EXPECT_THROW(SteamMath::quadRoot(0, 0, 0), sm::OutputUndefined);
 	EXPECT_THROW(SteamMath::quadRoot(3.0, 1.0, 5.0), sm::OutputUndefined);
 }
 
