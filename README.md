@@ -15,37 +15,29 @@ git submodule update
 ```
 
 ## Sestavování
-Doporučuji projekt sestavovat ve složce /build.
+Sestavovat lze jen ze složky src/
 
-### Sestavení Makefilu
-Sestavení Makefile pro všechny součásti projektu. **Pozor** k úspěšnému sestavení je třeba mít naklonované submoduly.
+Sestavení kalkulačky.
 ``` sh
-qmake ../src
+make 
 ```
 
-Sestavení Makefile pro aplikaci kalkulačky.
+Sestavení kalkulačky a spuštění.
 ``` sh
-qmake ../src/app.pro
+make run
 ```
 
-Sestavení Makefile pro testy. **Pozor** k úspěšnému sestavení testů je třeba mít naklonované submoduly.
+Sestavení a spuštění testů.
 ``` sh
-qmake ../src/tests.pro
+make test
 ```
 
-Matematická knihovna steammath bude sestavena v každém případě.
-
-### Překlad
-Zahájení překladu
-``` sh
-make
-```
-
-Když je nejhůř, `make clean` to jistí...
+Program se sestaví ve složce build/
 
 ### Souborová hierarchie sestavení
 ```
 build/
+|
 L_ steammath/   (Matematická knihovna)
 |   L_ steammath.o  (Přeložený soubor matematické knihovny)
 |   (další soubory...)
