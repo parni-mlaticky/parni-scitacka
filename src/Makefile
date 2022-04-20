@@ -31,11 +31,11 @@ profile:
 	@echo "Not implemented!"
 
 mathtest:
-	cd $(BUILD_DIR) && qmake ../src/tests.pro && make || (echo "\n\033[0;31mBUILD FAILED\033[0m"; false)
+	cd $(BUILD_DIR) && qmake ../src/tests.pro && time make || (printf "\n\033[0;31mBUILD FAILED!\033[0m\n"; false)
 	@echo
-	@echo "\033[0;32mTests build successful (in $(BUILD_DIR)$(TEST_SUBDIR))\033[0m"
+	@printf "\u001b[32mTests build successful (in $(BUILD_DIR)$(TEST_SUBDIR))\u001b[0m\n"
 
 gui:
-	cd $(BUILD_DIR) && qmake ../src/app.pro && make || (echo "\n\033[0;31mBUILD FAILED\033[0m"; false)
+	cd $(BUILD_DIR) && qmake ../src/app.pro && time make || (printf "\n\033[0;31mBUILD FAILED!\033[0m\n"; false)
 	@echo
-	@echo "\033[0;32mApplication build successful (in $(BUILD_DIR)$(APP_SUBDIR))\033[0m"
+	@printf "\u001b[32mApplication build successful (in $(BUILD_DIR)$(APP_SUBDIR))\u001b[0m\n"
