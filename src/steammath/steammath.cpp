@@ -89,10 +89,14 @@ double SteamMath::fact(int x) {
 }
 
 double SteamMath::pow(double x, int y) {
-	if (x < 1) {
-		throw PositiveNonZeroNumberRequired("y has to be greater then zero");
+	if (y < 0) {
+		throw OutputUndefined("y has to be greater then zero");
 	}
 	std::feclearexcept(FE_ALL_EXCEPT);
+
+	if(y == 0){
+		return 1;
+	}
 
 	double result = x;
 	for (int i = 0; i < y-1; i++) {
@@ -103,18 +107,22 @@ double SteamMath::pow(double x, int y) {
 	return result;
 }
 
-double SteamMath::root(double x, double y) {
+double SteamMath::root(double x, int y) {
 	std::feclearexcept(FE_ALL_EXCEPT);
 
-	// FIXME Only works as a square root.
-	double result = sqrt(x);
+	if(y % 2 == 0 && x < 0){
+		throw OutputUndefined("Odd nth root of a negative number is not a real number");
+	}
 
-	// FIXME division seems to set off some unexpexted flags.
-	//SteamMath::calcErrorCheck();
-	//SteamMath::calcErrorCheck();
+	if(y == 0){
+		throw OutputUndefined("Root of degree 0 is not defined");
+	}
+
+	double result = std::pow(x,  (1.0/y));
+
 	return result;
 }
 
-SmException::SmException(char *message) {
+SmException::SmException(const char* message) {
 	std::cout << message << std::endl;
 }
