@@ -85,7 +85,7 @@ namespace sm {
 			 * @param a coefficient of the quadratic term
 			 * @param b coefficient of the linear term
 			 * @param c coefficient of the constant term
-			 * @return vector of roots of the function
+			 * @return vector of roots of the quadratic function
 			 */
 			static std::vector<double> quadRoot(double a, double b, double c);
 
