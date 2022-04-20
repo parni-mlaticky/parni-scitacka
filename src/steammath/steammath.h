@@ -3,6 +3,7 @@
  * */
 
 #include <exception>
+#include <vector>
 
 /**
  * A function to test it he library is included properly
@@ -78,6 +79,15 @@ namespace sm {
 			* @return Root of the parameter number to the parameter degree
 			*/
 			static double root(double x, int y);
+
+			/**
+			 * @brief finds the roots of a quadratic function (ax^2 + bx + c)
+			 * @param a coefficient of the quadratic term
+			 * @param b coefficient of the linear term
+			 * @param c coefficient of the constant term
+			 * @return vector of roots of the function
+			 */
+			static std::vector<double> quadRoot(double a, double b, double c);
 
 		private:
 			/**
