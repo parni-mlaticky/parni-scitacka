@@ -15,6 +15,11 @@ public:
 	ParniScitacka(QWidget *parent = nullptr);
 	~ParniScitacka();
 
+private slots:
+	void customActionTest();
+    void on_btnNum0_clicked();
+    void on_btnNum1_clicked();
+
 private:
 	Ui::ParniScitacka *ui;
 };
