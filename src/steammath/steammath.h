@@ -77,7 +77,7 @@ namespace sm {
 			* @param y degree
 			* @return Root of the parameter number to the parameter degree
 			*/
-			static double root(double x, double y);
+			static double root(double x, int y);
 
 		private:
 			/**
@@ -97,7 +97,7 @@ namespace sm {
 	 */
 	class SmException : std::exception {
 	public:
-		SmException(char *message);
+		SmException(const char *message);
 	};
 
 	/**
@@ -109,10 +109,10 @@ namespace sm {
 	};
 
 	/**
-	 * Exception signaling that ther was a number lesser than one used somewere where it shouldn't.
+	 * Exception signaling that the output is undefined for this input
 	 * @param message A message detailing the event.
 	 */
-	class PositiveNonZeroNumberRequired : sm::SmException {
+	class OutputUndefined : sm::SmException {
 		using SmException::SmException;
 	};
 };

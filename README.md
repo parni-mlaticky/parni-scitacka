@@ -1,11 +1,24 @@
 # Parní sčítačka
 IVS projekt Marka Havla, Ondřeje Zobala, Vladimíra Hucoviče a Petra Koloucha
 
+## Klonování
+Projekt **obsahuje submoduly**, proto je nutné jej naklonovat rekurzivně.
+``` sh
+git clone --recurse-submodules git@github.com:/parni-mlaticky/parni-scitacka
+```
+
+V případě, že jste si projekt naklonovaly bez submodulů, lze je doplnit pomocí následujících příkazů.
+
+``` sh
+git submodule init
+git submodule update
+```
+
 ## Sestavování
 Doporučuji projekt sestavovat ve složce /build.
 
 ### Sestavení Makefilu
-Sestavení Makefile pro všechny součásti projektu.
+Sestavení Makefile pro všechny součásti projektu. **Pozor** k úspěšnému sestavení je třeba mít naklonované submoduly.
 ``` sh
 qmake ../src
 ```
@@ -15,7 +28,7 @@ Sestavení Makefile pro aplikaci kalkulačky.
 qmake ../src/app.pro
 ```
 
-Sestavení Makefile pro testy
+Sestavení Makefile pro testy. **Pozor** k úspěšnému sestavení testů je třeba mít naklonované submoduly.
 ``` sh
 qmake ../src/tests.pro
 ```
@@ -28,8 +41,10 @@ Zahájení překladu
 make
 ```
 
+Když je nejhůř, `make clean` to jistí...
+
 ### Souborová hierarchie sestavení
-``` 
+```
 build/
 L_ steammath/   (Matematická knihovna)
 |   L_ steammath.o  (Přeložený soubor matematické knihovny)
@@ -40,8 +55,8 @@ L_ gui/ (Grafická aplikace kalkulačky)
 |   (další soubory...)
 |
 L_ mathtest/ (Kontrolní program pro ladění matematické knihovny bez GUI)
-|   L_ test (Spustitelný ladící program)
-|   (další soubory...)
+    L_ test (Spustitelný ladící program)
+    (další soubory...)
 ```
 
 *Pokud se vám něco nelíbí, klidně to změňte.*
@@ -57,4 +72,5 @@ Příklad generování souboru files.pri v matematické knihovně:
 cd steammath
 ../updatefiles
 ```
+
 
