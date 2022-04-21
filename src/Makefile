@@ -19,9 +19,9 @@ clean:
 test: mathtest
 	cd $(BUILD_DIR) && $(BUILD_DIR)$(TEST_SUBDIR)$(TEST_EXEC)
 
-# TODO
 doc:
-	@echo "Not implemented!"
+	doxygen Doxyfile || (printf "\n\033[0;31m]FAILED TO CREATE DOCUMENTATION!\033[0m\n"; false)
+	@echo "Documentation created"
 
 run: gui
 	cd $(BUILD_DIR) && $(BUILD_DIR)$(APP_SUBDIR)$(APP_EXEC)
