@@ -70,7 +70,7 @@ double SteamMath::div(double x, double y) {
 
 double SteamMath::fact(int x) {
 	if (x < 0) {
-		throw PositiveNonZeroNumberRequired("x has to be greater then zero");
+		throw OutputUndefined("x has to be greater then zero");
 	}
 
 	if (x == 0 || x == 1) {
@@ -111,7 +111,7 @@ double SteamMath::root(double x, int y) {
 	std::feclearexcept(FE_ALL_EXCEPT);
 
 	if(y % 2 == 0 && x < 0){
-		throw OutputUndefined("Odd nth root of a negative number is not a real number");
+		throw OutputUndefined("Even nth root of a negative number is not a real number");
 	}
 
 	if(y == 0){
@@ -122,6 +122,41 @@ double SteamMath::root(double x, int y) {
 
 	return result;
 }
+
+std::vector<double> SteamMath::quadRoot(double a, double b, double c){
+	double discriminant = SteamMath::pow(b, 2) - (4*a*c);
+	if(discriminant < 0){
+		throw OutputUndefined("Discriminant is negative; the roots are not real");
+	}
+	if(a == 0 && b == 0){
+		throw OutputUndefined("For a == b == 0 , the output could either be anything (c==0) or nothing (c != 0)");
+	}
+
+	std::vector<double> result;
+
+	if(a == 0){
+		double x = c / (-b);
+		result.push_back(x);
+		result.push_back(x);
+		return result;
+	}
+	if(b == 0){
+		double x1 = -SteamMath::root(-c, 2);
+		double x2 = -x1;
+		result.push_back(x1);
+		result.push_back(x2);
+		return result;
+	}
+
+	double x1 = (-b + SteamMath::root(discriminant, 2)) / (2*a);
+	double x2 = (-b - SteamMath::root(discriminant, 2)) / (2*a);
+
+	result.push_back(x1);
+	result.push_back(x2);
+
+	return result;
+}
+
 
 SmException::SmException(const char* message) {
 	std::cout << message << std::endl;
