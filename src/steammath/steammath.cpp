@@ -1,21 +1,16 @@
+/**
+ * @brief Implementation of the functions of SteamMath library
+ * @file steammath.cpp
+ * @authors Vladimír Hucovič, Ondřej Zobal
+ */
+
 #include "steammath.h"
-// FIXME not sure if its ok that we are using this.
-// I currently use it for abs and sqrt. Not sure if its cool tho.
-// I could replace the abs if I wanted to but sqrt is a different couple of coffee.
-#include <math.h>
+#include <cmath>
 #include <iostream>
 #include <cfenv>
 #include <limits>
 
 using namespace sm;
-
-
-int SteamMath::include_test(int one) {
-	if (one > 0 && one < 2) {
-		return (one * 1000) * (one - 1) + 1;
-	}
-	return 2;
-}
 
 void SteamMath::calcErrorCheck() {
 	// Test all errors supported by architectures FPU.
