@@ -5,6 +5,7 @@
 #include <math.h>
 #include <iostream>
 #include <cfenv>
+#include <limits>
 
 using namespace sm;
 
@@ -157,6 +158,33 @@ std::vector<double> SteamMath::quadRoot(double a, double b, double c){
 	return result;
 }
 
+double SteamMath::sin(double x){
+	double result = std::sin(x);
+	return result;
+}
+
+double SteamMath::cos(double x) {
+	double result = std::cos(x);
+	return result;
+}
+
+double SteamMath::tan(double x) {
+	if(std::abs(std::cos(x)) < std::numeric_limits<double>::epsilon()){
+		throw OutputUndefined("Tangent is undefined (infinity) for this value");
+	}
+
+	double result = std::tan(x);
+	return result;
+}
+
+double SteamMath::cotan(double x) {
+	if(std::abs(std::sin(x)) < std::numeric_limits<double>::epsilon()){
+		throw OutputUndefined("Cotangent is undefined (infinity) for this value");
+	}
+
+	double result = 1 / std::tan(x);
+	return result;
+}
 
 SmException::SmException(const char* message) {
 	std::cout << message << std::endl;
