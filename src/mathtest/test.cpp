@@ -3,8 +3,10 @@
 
 #include <iostream>
 #include <string>
+#include <cmath>
 
 #define EPSILON 1e-15
+#define _USE_MATH_DEFINES
 
 using namespace sm;
 
@@ -96,6 +98,35 @@ TEST_F(doubles, quadRootTest){
 	EXPECT_THROW(SteamMath::quadRoot(3.0, 1.0, 5.0), sm::OutputUndefined);
 }
 
+TEST(goniometric, sine){
+	EXPECT_TRUE(std::abs(SteamMath::sin(1) - 0.841470984807896) < EPSILON);
+	EXPECT_TRUE(std::abs(SteamMath::sin(M_PI)) < EPSILON);
+	EXPECT_TRUE(SteamMath::sin(0) == 0);
+	EXPECT_TRUE(std::abs(SteamMath::sin(-1) - (-0.841470984807896)) < EPSILON);
+}
+
+TEST(goniometric, cosine){
+	EXPECT_TRUE(std::abs(SteamMath::cos(1) - 0.5403023058681397) < EPSILON);
+	EXPECT_TRUE(std::abs(SteamMath::cos(M_PI) - (-1)) < EPSILON);
+	EXPECT_TRUE(SteamMath::cos(0) == 1);
+	EXPECT_TRUE(std::abs(SteamMath::cos(-1) - 0.5403023058681397) < EPSILON);
+}
+
+TEST(goniometric, tangent){
+	EXPECT_TRUE(std::abs(SteamMath::tan(1) - 1.557407724654902) < EPSILON);
+	EXPECT_TRUE(std::abs(SteamMath::tan(M_PI)) < EPSILON);
+	EXPECT_TRUE(std::abs(SteamMath::tan(0)) < EPSILON);
+	EXPECT_TRUE(std::abs(SteamMath::tan(-1) - (-1.557407724654902)) < EPSILON);
+
+	EXPECT_THROW(SteamMath::tan(M_PI_2), sm::OutputUndefined);
+}
+
+TEST(goniometric, cotangent){
+	EXPECT_TRUE(std::abs(SteamMath::cotan(1) - 0.642092615934330) < EPSILON);
+	EXPECT_TRUE(std::abs(SteamMath::cotan(-1) - (-0.642092615934330)) < EPSILON);
+
+	EXPECT_THROW(SteamMath::cotan(0), sm::OutputUndefined);
+}
 
 int main(int argc, char **argv) {
   	::testing::InitGoogleTest(&argc, argv);
