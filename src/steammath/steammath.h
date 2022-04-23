@@ -81,13 +81,44 @@ namespace sm {
 			static double root(double x, int y);
 
 			/**
-			 * @brief finds the roots of a quadratic function (ax^2 + bx + c)
+			 * This function returns a vector of roots of the input quadratic function (ax^2 + bx + c). It can also
+			 * correctly handle input without the quadratic term or an input without both the quadratic and linear
+			 * terms
+			 * @brief Method to find the roots of a quadratic function (ax^2 + bx + c)
 			 * @param a coefficient of the quadratic term
 			 * @param b coefficient of the linear term
 			 * @param c coefficient of the constant term
 			 * @return vector of roots of the quadratic function
 			 */
 			static std::vector<double> quadRoot(double a, double b, double c);
+
+			/**
+			 * @brief Method to calculate the sine of x
+			 * @param x the argument for the sine function (in radians)
+			 * @return the sine of x
+			 */
+			static double sin(double x);
+
+			/**
+			 * @brief Method to calculate the cosine of x
+			 * @param x the argument for the cosine function (in radians)
+			 * @return the cosine of x
+			 */
+			static double cos(double x);
+
+			/**
+			 * @brief Method to calculate the tangent of x
+			 * @param x the argument for the tangent function (in radians)
+			 * @return the tangent of x
+			 */
+			static double tan(double x);
+
+			/**
+			 * @brief Method to calculate the cotangent of x
+			 * @param x the argument for the cotangent function (in radians)
+			 * @return the cotangent of x
+			 */
+			static double cotan(double x);
 
 		private:
 			/**
