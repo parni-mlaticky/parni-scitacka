@@ -28,7 +28,8 @@ run: gui
 
 # TODO
 profile:
-	@echo "Not implemented!"
+	mkdir -p $(BUILD_DIR)standard-deviation
+	cd $(BUILD_DIR)standard-deviation && g++ ../../src/standard-deviation/stddev.cpp ../../src/steammath/steammath.cpp -o stddev
 
 mathtest:
 	cd $(BUILD_DIR) && qmake ../src/tests.pro && time make || (printf "\n\033[0;31mBUILD FAILED!\033[0m\n"; false)
