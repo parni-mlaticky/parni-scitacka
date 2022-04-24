@@ -1,4 +1,5 @@
 /* Název projektu: Parni Scitacka
+ * Balicek: standard-deviation
  * Soubor: stddev.cpp
  * Datum: 24.04.2022
  * Posledni zmena: 24.04.2022
@@ -13,6 +14,7 @@
 
 /**
  * Simple CLI app, which performs standard deviation calculation on number from stdin.
+ * @package standard-deviation
  * @author Marek Havel
  * @date 2022-04-24
  * @version 1.0
@@ -29,7 +31,6 @@ using namespace sm;
 
 /**
  * @brief Method to calculate standard deviation of a sample
- *
  * @param *data Pointer to input data
  * @param n Number of elements in input data
  * @return double Standard deviation of input data
