@@ -1,5 +1,6 @@
 #include "parniscitacka.h"
 #include "steammath.h"
+#include "parnilogika.h"
 
 #include <QApplication>
 #include <iostream>
@@ -9,8 +10,8 @@ using namespace sm;
 
 int main(int argc, char *argv[])
 {
-	int one = SteamMath::include_test(1);
-	std::cout << "This is a main for mathlib tests!" << std::to_string(one) << std::endl;
+	Parnilogika::pl = new Parnilogika();
+	// QT magic at work. DON'T TOUCH!
 	QApplication a(argc, argv);
 	ParniScitacka w;
 	w.show();
