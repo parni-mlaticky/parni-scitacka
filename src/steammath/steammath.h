@@ -1,23 +1,25 @@
 /**
- * A math library
+ * A math library containing basic arithmetic operations and some advanced functions like factorial, quadratic
+ * function root and goniometric functions
+ * @brief Header for the SteamMath math library
+ * @file steammath.h
+ * @authors Petr Kolouch, Ondřej Zobal, Vladimír Hucovič
  * */
 
 #include <exception>
 #include <vector>
 
 /**
- * A function to test it he library is included properly
- * @param one Should be set to the number 1.
- * @return 1 if one is one, otherwise 2.
-*/
-
-//TODO: add one more function
-
+ * @namespace sm
+ * @brief Namespace for the SteamMath math functions and exceptions
+ */
 namespace sm {
+	/**
+	 * @class SteamMath
+	 * @brief Class with all SteamMath functions
+	 */
 	class SteamMath {
 		public:
-			static int include_test(int one);
-
 			/**
 			* @brief Method to summate numbers
 			*
@@ -134,6 +136,8 @@ namespace sm {
 	/**
 	 * Base exception for calculation errors.
 	 * Including overflow and underflow
+	 * @class SmException
+	 * @brief Base exception
 	 * @param message A message detailing the event.
 	 */
 	class SmException : std::exception {
@@ -143,6 +147,8 @@ namespace sm {
 
 	/**
 	 * Exception signaling that division by zero has occurred in a calculation
+	 * @class DivisionByZero
+	 * @brief Exception for a division by zero error
 	 * @param message A message detailing the event.
 	 */
 	class DivisionByZero : sm::SmException {
@@ -151,6 +157,8 @@ namespace sm {
 
 	/**
 	 * Exception signaling that the output is undefined for this input
+	 * @class OutputUndefined
+	 * @brief Exception for when the output is undefined
 	 * @param message A message detailing the event.
 	 */
 	class OutputUndefined : sm::SmException {
