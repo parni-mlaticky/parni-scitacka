@@ -126,7 +126,7 @@ namespace sm {
 			/**
 			* Checks for FPU errors. If any are found, raise exception.
 			*/
-			static void calcErrorCheck();
+			static void calcErrorCheck(double result);
 	};
 
 	/*

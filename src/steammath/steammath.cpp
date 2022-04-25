@@ -12,14 +12,13 @@
 
 using namespace sm;
 
-void SteamMath::calcErrorCheck() {
+void SteamMath::calcErrorCheck(double result) {
 	// Test all errors supported by architectures FPU.
-	if (std::fetestexcept(FE_ALL_EXCEPT)) {
-		throw SmException("Error during an operation");
+	if (std::fetestexcept(FE_INVALID | FE_OVERFLOW | FE_UNDERFLOW)) {
+		throw OutputUndefined("Error during an operation");
 	}
-
-	if (std::fetestexcept(FE_DIVBYZERO)) {
-		throw DivisionByZero("Division by zero detected");
+	if(result == std::numeric_limits<double>::infinity() || result == std::numeric_limits<double>::infinity()) {
+		throw OutputUndefined("Error during an operation");
 	}
 }
 
@@ -28,7 +27,7 @@ double SteamMath::sum(double x, double y) {
 
 	double result = x + y;
 
-	SteamMath::calcErrorCheck();
+	SteamMath::calcErrorCheck(result);
 	return result;
 }
 
@@ -37,7 +36,7 @@ double SteamMath::sub(double x, double y) {
 
 	double result = x - y;
 
-	SteamMath::calcErrorCheck();
+	SteamMath::calcErrorCheck(result);
 	return result;
 }
 
@@ -46,7 +45,7 @@ double SteamMath::mul(double x, double y) {
 
 	double result = x * y;
 
-	SteamMath::calcErrorCheck();
+	SteamMath::calcErrorCheck(result);
 	return result;
 }
 
@@ -59,8 +58,7 @@ double SteamMath::div(double x, double y) {
 
 	double result = x / y;
 
-	// FIXME division seems to set off some unexpexted flags.
-	//SteamMath::calcErrorCheck();
+	SteamMath::calcErrorCheck(result);
 	return result;
 }
 
@@ -80,7 +78,7 @@ double SteamMath::fact(int x) {
 		result *= i;
 	}
 
-	SteamMath::calcErrorCheck();
+	SteamMath::calcErrorCheck(result);
 	return result;
 }
 
@@ -99,7 +97,7 @@ double SteamMath::pow(double x, int y) {
 		result *= x;
 	}
 
-	SteamMath::calcErrorCheck();
+	SteamMath::calcErrorCheck(result);
 	return result;
 }
 
