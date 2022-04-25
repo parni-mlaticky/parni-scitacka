@@ -1,5 +1,5 @@
 #include <vector>
-
+#include <string>
 /**
 * A singleton class, holding internal state and logic of the calculator backend.
 * @file parnilogika.h
@@ -8,6 +8,7 @@
 * @todo We may need to condiser input validation,
 * but that may not be needed since the use wont be inputing the numbers directly into the collector.
 */
+
 class Parnilogika {
 	public:
 
@@ -22,10 +23,15 @@ class Parnilogika {
 	std::vector<char> collector;
 
 	/**
+	 * Result of the previous operation
+	 */
+	double ans;
+
+	/**
 	* Enum for storing the selected operation
 	* @todo TODO add more.
 	*/
-	enum Operation { UNDEF, ADD, SUB, MUL, DIV };
+	enum Operation { UNDEF, SUM, SUB, MUL, DIV, FACT, POW, ROOT, QUAD, SIN, COS, TAN, COTAN };
 	Operation operation;
 
 	/**
@@ -98,6 +104,9 @@ class Parnilogika {
 	* @param operation The operation that will be carried out.
 	* @return The result of the operands and operation.
 	*/
+
+	std::vector<double> getQuadRoot(double a, double b, double c);
+
 	static double processResult(double x, double y, Operation operation);
 
 	/**
@@ -106,4 +115,10 @@ class Parnilogika {
 	* @return The result of the operands and operation
 	*/
 	double processResult();
+
+	/**
+	 * Converts the content of collector to string to be displayed on the calculator screen
+	 * @return content of collector converted to string
+	 */
+	std::string collectorToString();
 };

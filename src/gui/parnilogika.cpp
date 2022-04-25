@@ -1,7 +1,10 @@
 #include "parnilogika.h"
+#include "../steammath/steammath.h"
 #include <string>
 #include <iostream>
 #include <locale>
+
+using namespace sm;
 
 Parnilogika *Parnilogika::pl = nullptr;
 
@@ -90,10 +93,44 @@ void Parnilogika::reset() {
 	operation = Parnilogika::Operation::UNDEF;
 }
 
+std::vector<double> getQuadRoot(double a, double b, double c){
+	// TODO we have to figure out how to handle this
+	return SteamMath::quadRoot(a, b ,c);
+}
+
 double Parnilogika::processResult(double x, double y, Operation operation) {
-	// TODO implement.
-	(void)x, (void)y, (void)operation;
+	switch (operation) {
+		case UNDEF:
+            return Parnilogika::pl->collectorToDouble();
+		case SUM:
+			return SteamMath::sum(x, y);
+		case SUB:
+			return SteamMath::sub(x, y);
+		case MUL:
+			return SteamMath::mul(x, y);
+		case DIV:
+			return SteamMath::div(x, y);
+		case FACT:
+			return SteamMath::fact(x);
+		case POW:
+			return SteamMath::pow(x, y);
+		case ROOT:
+			return SteamMath::root(x, y);
+		case SIN:
+			return SteamMath::sin(x);
+		case COS:
+			return SteamMath::cos(x);
+		case TAN:
+			return SteamMath::tan(x);
+		case COTAN:
+			return SteamMath::cotan(x);
+	}
 	return 0;
+}
+
+std::string Parnilogika::collectorToString(){
+    std::string s(collector.begin(), collector.end());
+    return s;
 }
 
 double Parnilogika::processResult() {
