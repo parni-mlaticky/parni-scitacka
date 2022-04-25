@@ -84,7 +84,7 @@ class Parnilogika {
 	char popCollector();
 
 	/**
-	* Copies the value from the collector to the acumulator. Collector remains unchanged.
+	* Moves the value from the collector to the acumulator (and resets the collector)
 	*/
 	void collectorToAccumulator();
 
@@ -129,5 +129,5 @@ class Parnilogika {
 	 * @param operation currently selected operation
 	 * @return string that is ready to be displayed on the calculator screen
 	 */
-	std::string getDisplayOutput(Operation operation);
+	std::string getDisplayOutput();
 };

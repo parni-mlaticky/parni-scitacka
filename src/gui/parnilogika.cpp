@@ -138,7 +138,7 @@ double Parnilogika::processResult() {
 	return Parnilogika::processResult(accumulator, collectorToDouble(), operation);
 }
 
-std::string Parnilogika::getDisplayOutput(Operation operation) {
+std::string Parnilogika::getDisplayOutput() {
 	std::string s;
 	s = std::to_string(accumulator);
 	char op;
