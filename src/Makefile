@@ -3,6 +3,8 @@ APP_SUBDIR = gui/
 APP_EXEC = gui
 TEST_SUBDIR = mathtest/
 TEST_EXEC = test
+PROFILE_SUBDIR = standard-deviation
+PROFILE_EXEC = stddev
 
 .PHONY: all pack clean test doc run profile mathtest gui
 
@@ -29,7 +31,7 @@ run: gui
 profile:
 	cd $(BUILD_DIR) && qmake ../src/stddev.pro && time make || (printf "\n\033[0;31mBUILD FAILED!\033[0m\n"; false)
 	@echo
-	@printf "\033[32mProfiler build successful (in $(BUILD_DIR)$(TEST_SUBDIR))\033[0m\n"
+	@printf "\033[32mProfiler build successful (in $(BUILD_DIR)$(PROFILE_SUBDIR))\033[0m\n"
 
 mathtest:
 	cd $(BUILD_DIR) && qmake ../src/tests.pro && time make || (printf "\n\033[0;31mBUILD FAILED!\033[0m\n"; false)
