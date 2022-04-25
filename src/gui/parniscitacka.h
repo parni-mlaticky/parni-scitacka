@@ -28,6 +28,12 @@ private slots:
     void on_Button9_clicked();
     void on_ButtonReset_clicked();
     void on_ButtonDot_clicked();
+    void on_ButtonPlus_clicked();
+    void on_ButtonMinus_clicked();
+    void on_ButtonMultiply_clicked();
+    void on_ButtonDivide_clicked();
+    void on_ButtonPow_clicked();
+    void on_ButtonSqrt_clicked();
 
 private:
 	Ui::ParniScitacka *ui;
