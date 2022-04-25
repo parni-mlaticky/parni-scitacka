@@ -29,14 +29,14 @@ run: gui
 profile:
 	cd $(BUILD_DIR) && qmake ../src/stddev.pro && time make || (printf "\n\033[0;31mBUILD FAILED!\033[0m\n"; false)
 	@echo
-	@printf "\u001b[32mTests build successful (in $(BUILD_DIR)$(TEST_SUBDIR))\u001b[0m\n"
+	@printf "\033[32mProfiler build successful (in $(BUILD_DIR)$(TEST_SUBDIR))\033[0m\n"
 
 mathtest:
 	cd $(BUILD_DIR) && qmake ../src/tests.pro && time make || (printf "\n\033[0;31mBUILD FAILED!\033[0m\n"; false)
 	@echo
-	@printf "\u001b[32mTests build successful (in $(BUILD_DIR)$(TEST_SUBDIR))\u001b[0m\n"
+	@printf "\033[32mTests build successful (in $(BUILD_DIR)$(TEST_SUBDIR))\033[0m\n"
 
 gui:
 	cd $(BUILD_DIR) && qmake ../src/app.pro && time make || (printf "\n\033[0;31mBUILD FAILED!\033[0m\n"; false)
 	@echo
-	@printf "\u001b[32mApplication build successful (in $(BUILD_DIR)$(APP_SUBDIR))\u001b[0m\n"
+	@printf "\033[32mApplication build successful (in $(BUILD_DIR)$(APP_SUBDIR))\n\033[0m"
