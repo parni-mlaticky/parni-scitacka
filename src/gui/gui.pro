@@ -22,7 +22,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 build.depends = libsteammath
 
 # build.file = build.pro # This specifies the .pro file to use
-LIBS += "$$OUT_PWD/../steammath/steammath.o"
+
+LIBS += -L"$$OUT_PWD/../steammath" -lsteammath
 
 
 include(files.pri)
