@@ -35,7 +35,6 @@ using namespace sm;
  * @param n Number of elements in input data
  * @return double Standard deviation of input data
  * @bug does not work for numbers with a decimal dash instead of a point todo fix
- * @bug does not work for too precise numbers todo fix
  */
 double stddev_sample(double *data, int n)
 {
@@ -79,7 +78,6 @@ int main()
             data[i] = temp[i];
         }
         data[n-1] = stod(input);
-        cout << data[n-1] << endl;
     }
 
     if(n > 0) // different behaviour if no data was provided
