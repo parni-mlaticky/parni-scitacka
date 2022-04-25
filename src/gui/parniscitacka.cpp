@@ -74,10 +74,10 @@ void ParniScitacka::on_Button9_clicked()
     ParniScitacka::ui->Display->setText(QString::fromStdString(Parnilogika::pl->collectorToString()));
 }
 
-void ParniScitacka::on_ResetButton_clicked()
+void ParniScitacka::on_ButtonReset_clicked()
 {
     Parnilogika::pl->reset();
-    ParniScitacka::ui->Display->setText(QString::fromStdString(Parnilogika::pl->collectorToString()));
+    ParniScitacka::ui->Display->setText(QString::fromStdString("0"));
 }
 
 void ParniScitacka::on_ButtonDot_clicked()

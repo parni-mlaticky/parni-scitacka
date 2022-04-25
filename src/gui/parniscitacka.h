@@ -26,7 +26,7 @@ private slots:
     void on_Button7_clicked();
     void on_Button8_clicked();
     void on_Button9_clicked();
-    void on_ResetButton_clicked();
+    void on_ButtonReset_clicked();
     void on_ButtonDot_clicked();
 
 private:
