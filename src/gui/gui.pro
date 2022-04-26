@@ -19,7 +19,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 # You can also use this to specify dependencies.  In this case, we dont want
 # the build target to run until after the logic and gui targets are complete.
-build.depends = libsteammath
 
 # build.file = build.pro # This specifies the .pro file to use
 

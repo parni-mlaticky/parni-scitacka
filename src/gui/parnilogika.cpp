@@ -51,7 +51,7 @@ void Parnilogika::doubleToCollector(double f) {
 	std::setlocale(LC_NUMERIC,oldLocale.c_str());
 	str.erase(str.find_last_not_of('0') + 1, std::string::npos);
 
-	for (int i = 0; i < str.length()-1; i++) {
+	for (int i = 0; (size_t) i < str.length()-1; i++) {
 		appendToCollector(str[i]);
 	}
 
@@ -69,6 +69,11 @@ void Parnilogika::appendToCollector(char c) {
 }
 
 char Parnilogika::popCollector() {
+	// Poping an empty vector causes segfaults.
+	if(collector.size() == 0) {
+		return '\0';
+	}
+
 	char c = collector[collector.size()-1];
 	collector.pop_back();
 	return c;
@@ -127,6 +132,25 @@ double Parnilogika::processResult(double x, double y, Operation operation) {
 			return SteamMath::cotan(x);
 	}
 	return 0;
+}
+
+bool Parnilogika::isCollectorNegative() {
+	if(collector.size() == 0) {
+		return false;
+	}
+	return collector[0] == '-';
+}
+
+void Parnilogika::invertCollector() {
+	if(collector.size() == 0) {
+		return;
+	}
+	if(Parnilogika::isCollectorNegative()) {
+		collector.erase(collector.begin());
+	}
+	else {
+		collector.insert(collector.begin(), '-');
+	}
 }
 
 std::string Parnilogika::collectorToString(){

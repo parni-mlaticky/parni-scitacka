@@ -79,7 +79,7 @@ class Parnilogika {
 
 	/**
 	* Removes the last added character from collector. Efectively acts as a backspace
-	* @return The character that was removed
+	* @return The character that was removed. There were no removable characters \0 will be returned.
 	*/
 	char popCollector();
 
@@ -98,6 +98,17 @@ class Parnilogika {
 	* Clears accumulator, collector and operation.
 	*/
 	void reset();
+
+	/**
+	* Tells you, whther the collector contains is negative.
+	* @return true if collector begins with a minus.
+	*/
+	bool isCollectorNegative();
+
+	/**
+	* Changes the sign of the collector
+	*/
+	void invertCollector();
 
 	/**
 	* Pocesses the numbers and operation.
