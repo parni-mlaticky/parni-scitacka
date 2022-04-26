@@ -91,29 +91,37 @@ void ParniScitacka::on_ButtonDot_clicked()
 
 void ParniScitacka::on_ButtonPlus_clicked()
 {
+	Parnilogika::Operation op = Parnilogika::pl->SUM;
+//	if(op == Parnilogika::pl->operation){
+//		return;
+//	}
     Parnilogika::pl->collectorToAccumulator();
-    Parnilogika::pl->operation = Parnilogika::pl->SUM;
+    Parnilogika::pl->setOperation(op);
     ParniScitacka::ui->Display->setText(QString::fromStdString(Parnilogika::pl->getDisplayOutput()));
 }
 
 void ParniScitacka::on_ButtonMinus_clicked()
 {
+	Parnilogika::Operation op = Parnilogika::pl->SUB;
+//	if(op == Parnilogika::pl->operation){
+//		return;
+//	}
     Parnilogika::pl->collectorToAccumulator();
-    Parnilogika::pl->operation = Parnilogika::pl->SUB;
+    Parnilogika::pl->setOperation(Parnilogika::pl->SUB);
     ParniScitacka::ui->Display->setText(QString::fromStdString(Parnilogika::pl->getDisplayOutput()));
 }
 
 void ParniScitacka::on_ButtonMultiply_clicked()
 {
     Parnilogika::pl->collectorToAccumulator();
-    Parnilogika::pl->operation = Parnilogika::pl->MUL;
+    Parnilogika::pl->setOperation(Parnilogika::pl->MUL);
     ParniScitacka::ui->Display->setText(QString::fromStdString(Parnilogika::pl->getDisplayOutput()));
 }
 
 void ParniScitacka::on_ButtonDivide_clicked()
 {
     Parnilogika::pl->collectorToAccumulator();
-    Parnilogika::pl->operation = Parnilogika::pl->DIV;
+    Parnilogika::pl->setOperation(Parnilogika::pl->DIV);
     ParniScitacka::ui->Display->setText(QString::fromStdString(Parnilogika::pl->getDisplayOutput()));
 }
 
@@ -121,13 +129,25 @@ void ParniScitacka::on_ButtonDivide_clicked()
 void ParniScitacka::on_ButtonPow_clicked()
 {
     Parnilogika::pl->collectorToAccumulator();
-    Parnilogika::pl->operation = Parnilogika::pl->POW;
+    Parnilogika::pl->setOperation(Parnilogika::pl->POW);
     ParniScitacka::ui->Display->setText(QString::fromStdString(Parnilogika::pl->getDisplayOutput()));
 }
 
 void ParniScitacka::on_ButtonSqrt_clicked()
 {
     Parnilogika::pl->collectorToAccumulator();
-    Parnilogika::pl->operation = Parnilogika::pl->ROOT;
+    Parnilogika::pl->setOperation(Parnilogika::pl->ROOT);
+    ParniScitacka::ui->Display->setText(QString::fromStdString(Parnilogika::pl->getDisplayOutput()));
+}
+
+void ParniScitacka::on_ButtonEqual_clicked()
+{
+    Parnilogika::pl->processResult();
+    ParniScitacka::ui->Display->setText(QString::fromStdString(Parnilogika::pl->getDisplayOutput()));
+}
+
+void ParniScitacka::on_ButtonSin_clicked()
+{
+    Parnilogika::pl->setOperation(Parnilogika::pl->SIN);
     ParniScitacka::ui->Display->setText(QString::fromStdString(Parnilogika::pl->getDisplayOutput()));
 }

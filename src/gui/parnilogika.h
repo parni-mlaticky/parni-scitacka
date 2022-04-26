@@ -40,7 +40,6 @@ class Parnilogika {
 	* This class is ment to be used as a singleton, this is a static variable, where the refference to the primary instance will be stored.
 	*/
 	static Parnilogika *pl;
-
 	/**
 	* Simply initializes the internal variables.
 	*/
@@ -120,8 +119,6 @@ class Parnilogika {
 
 	std::vector<double> getQuadRoot(double a, double b, double c);
 
-	static double processResult(double x, double y, Operation operation);
-
 	/**
 	* Pocesses the numbers in accumulator and collector and operation.
 	* Collector and accumulator remain unchanged.
@@ -141,4 +138,6 @@ class Parnilogika {
 	 * @return string that is ready to be displayed on the calculator screen
 	 */
 	std::string getDisplayOutput();
+
+	void setOperation(Operation op);
 };
