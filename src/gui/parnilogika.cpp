@@ -1,7 +1,10 @@
 #include "parnilogika.h"
+#include "../steammath/steammath.h"
 #include <string>
 #include <iostream>
 #include <locale>
+
+using namespace sm;
 
 Parnilogika *Parnilogika::pl = nullptr;
 
@@ -39,7 +42,7 @@ double Parnilogika::collectorToDouble() {
 }
 
 void Parnilogika::doubleToCollector(double f) {
-	erraseCollector();
+	eraseCollector();
 
 	const std::string oldLocale=std::setlocale(LC_NUMERIC,nullptr);
 
@@ -54,7 +57,7 @@ void Parnilogika::doubleToCollector(double f) {
 
 }
 
-void Parnilogika::erraseCollector() {
+void Parnilogika::eraseCollector() {
 	// FIXME I dont think i need to call a destructor on the old collector
 	// because I didnt use "new" to create it, but I am not sure.
 	// I dont know how magical this steammachine of a language is...
@@ -78,6 +81,7 @@ char Parnilogika::popCollector() {
 
 void Parnilogika::collectorToAccumulator() {
 	accumulator = collectorToDouble();
+	eraseCollector();
 }
 
 bool Parnilogika::isCollectorDecimal() {
@@ -95,9 +99,38 @@ void Parnilogika::reset() {
 	operation = Parnilogika::Operation::UNDEF;
 }
 
+std::vector<double> getQuadRoot(double a, double b, double c){
+	// TODO we have to figure out how to handle this
+	return SteamMath::quadRoot(a, b ,c);
+}
+
 double Parnilogika::processResult(double x, double y, Operation operation) {
-	// TODO implement.
-	(void)x, (void)y, (void)operation;
+	switch (operation) {
+		case UNDEF:
+            return Parnilogika::pl->collectorToDouble();
+		case SUM:
+			return SteamMath::sum(x, y);
+		case SUB:
+			return SteamMath::sub(x, y);
+		case MUL:
+			return SteamMath::mul(x, y);
+		case DIV:
+			return SteamMath::div(x, y);
+		case FACT:
+			return SteamMath::fact(x);
+		case POW:
+			return SteamMath::pow(x, y);
+		case ROOT:
+			return SteamMath::root(x, y);
+		case SIN:
+			return SteamMath::sin(x);
+		case COS:
+			return SteamMath::cos(x);
+		case TAN:
+			return SteamMath::tan(x);
+		case COTAN:
+			return SteamMath::cotan(x);
+	}
 	return 0;
 }
 
@@ -120,6 +153,69 @@ void Parnilogika::invertCollector() {
 	}
 }
 
+std::string Parnilogika::collectorToString(){
+    std::string s(collector.begin(), collector.end());
+    return s;
+}
+
 double Parnilogika::processResult() {
 	return Parnilogika::processResult(accumulator, collectorToDouble(), operation);
+}
+
+std::string Parnilogika::getDisplayOutput() {
+	std::string s;
+	s = std::to_string(accumulator);
+	char op;
+	switch (operation) {
+		case UNDEF:
+			s = collectorToString();
+			return s;
+		case SUM:
+			s.erase(s.find_last_not_of('0') + 1, std::string::npos);
+			if(floor(accumulator) == accumulator){
+				s.erase(remove(s.begin(), s.end(), '.'), s.end());
+			}
+			s += " + " + collectorToString();
+			return s;
+		case SUB:
+			s.erase(s.find_last_not_of('0') + 1, std::string::npos);
+			if(floor(accumulator) == accumulator){
+				s.erase(remove(s.begin(), s.end(), '.'), s.end());
+			}
+			s += " - " + collectorToString();
+			return s;
+		case MUL:
+			s.erase(s.find_last_not_of('0') + 1, std::string::npos);
+			if(floor(accumulator) == accumulator){
+				s.erase(remove(s.begin(), s.end(), '.'), s.end());
+			}
+			s += " * " + collectorToString();
+			return s;
+		case DIV:
+			s.erase(s.find_last_not_of('0') + 1, std::string::npos);
+			if(floor(accumulator) == accumulator){
+				s.erase(remove(s.begin(), s.end(), '.'), s.end());
+			}
+			s += " / " + collectorToString();
+			return s;
+		case POW:
+			s.erase(s.find_last_not_of('0') + 1, std::string::npos);
+			if(floor(accumulator) == accumulator){
+				s.erase(remove(s.begin(), s.end(), '.'), s.end());
+			}
+			s += " ^ " + collectorToString();
+			return s;
+		case ROOT:
+			s.erase(s.find_last_not_of('0') + 1, std::string::npos);
+			if(floor(accumulator) == accumulator){
+				s.erase(remove(s.begin(), s.end(), '.'), s.end());
+			}
+			s += " √ " + collectorToString();
+			return s;
+//		case SIN:
+//		case COS:
+//		case TAN:
+//		case COTAN:
+
+	}
 }

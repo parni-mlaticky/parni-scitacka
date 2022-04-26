@@ -1,13 +1,16 @@
 #include <vector>
-
+#include <string>
+#include <cmath>
+#include <algorithm>
 /**
 * A singleton class, holding internal state and logic of the calculator backend.
 * @file parnilogika.h
-* @author Ondřej Zobal
+* @authors Ondřej Zobal, Vladimír Hucovič
 * @todo changeCollectorSign Adds or removes - at the beginning of the collector.
 * @todo We may need to condiser input validation,
 * but that may not be needed since the use wont be inputing the numbers directly into the collector.
 */
+
 class Parnilogika {
 	public:
 
@@ -22,10 +25,15 @@ class Parnilogika {
 	std::vector<char> collector;
 
 	/**
+	 * Result of the previous operation
+	 */
+	double ans;
+
+	/**
 	* Enum for storing the selected operation
 	* @todo TODO add more.
 	*/
-	enum Operation { UNDEF, ADD, SUB, MUL, DIV };
+	enum Operation { UNDEF, SUM, SUB, MUL, DIV, FACT, POW, ROOT, QUAD, SIN, COS, TAN, COTAN };
 	Operation operation;
 
 	/**
@@ -61,7 +69,7 @@ class Parnilogika {
 	/**
 	* Resets the collector to an empty state.
 	*/
-	void erraseCollector();
+	void eraseCollector();
 
 	/**
 	* Adds c at the end of the collector.
@@ -76,7 +84,7 @@ class Parnilogika {
 	char popCollector();
 
 	/**
-	* Copies the value from the collector to the acumulator. Collector remains unchanged.
+	* Moves the value from the collector to the acumulator (and resets the collector)
 	*/
 	void collectorToAccumulator();
 
@@ -109,6 +117,9 @@ class Parnilogika {
 	* @param operation The operation that will be carried out.
 	* @return The result of the operands and operation.
 	*/
+
+	std::vector<double> getQuadRoot(double a, double b, double c);
+
 	static double processResult(double x, double y, Operation operation);
 
 	/**
@@ -117,4 +128,17 @@ class Parnilogika {
 	* @return The result of the operands and operation
 	*/
 	double processResult();
+
+	/**
+	 * @brief Converts the content of the collector to string
+	 * @return content of collector converted to string
+	 */
+	std::string collectorToString();
+
+	/**
+	 * @brief converts numbers and operations to a format that is then displayed on the calculator screen
+	 * @param operation currently selected operation
+	 * @return string that is ready to be displayed on the calculator screen
+	 */
+	std::string getDisplayOutput();
 };
