@@ -9,6 +9,7 @@ using namespace sm;
 Parnilogika *Parnilogika::pl = nullptr;
 
 Parnilogika::Parnilogika() {
+	std::setlocale(LC_NUMERIC,"C");
 	Parnilogika::reset();
 }
 
@@ -44,14 +45,12 @@ double Parnilogika::collectorToDouble() {
 void Parnilogika::doubleToCollector(double f) {
 	eraseCollector();
 
-	const std::string oldLocale=std::setlocale(LC_NUMERIC,nullptr);
 
 	std::setlocale(LC_NUMERIC,"C");
 	std::string str = std::to_string(f);
-	std::setlocale(LC_NUMERIC,oldLocale.c_str());
-	str.erase(str.find_last_not_of('0') + 1, std::string::npos);
+	str = cutTrailingZeros(str);
 
-	for (int i = 0; (size_t) i < str.length()-1; i++) {
+	for (int i = 0; (size_t) i < str.length(); i++) {
 		appendToCollector(str[i]);
 	}
 
@@ -65,6 +64,7 @@ void Parnilogika::eraseCollector() {
 }
 
 void Parnilogika::appendToCollector(char c) {
+	collectorValid = true;
 	collector.push_back(c);
 }
 
@@ -96,6 +96,7 @@ bool Parnilogika::isCollectorDecimal() {
 void Parnilogika::reset() {
 	accumulator = 0;
 	collector = std::vector<char>();
+	collectorValid = false;
 	operation = Parnilogika::Operation::UNDEF;
 }
 
@@ -104,33 +105,47 @@ std::vector<double> getQuadRoot(double a, double b, double c){
 	return SteamMath::quadRoot(a, b ,c);
 }
 
-double Parnilogika::processResult(double x, double y, Operation operation) {
+double Parnilogika::processResult() {
 	switch (operation) {
 		case UNDEF:
-            return Parnilogika::pl->collectorToDouble();
+			break;
 		case SUM:
-			return SteamMath::sum(x, y);
+			doubleToCollector(SteamMath::sum(accumulator, collectorToDouble()));
+			std::cout << collectorToString() << std::endl;
+			 break;
 		case SUB:
-			return SteamMath::sub(x, y);
+			doubleToCollector(SteamMath::sub(accumulator, collectorToDouble()));
+			break;
 		case MUL:
-			return SteamMath::mul(x, y);
+			doubleToCollector(SteamMath::mul(accumulator, collectorToDouble()));
+			break;
 		case DIV:
-			return SteamMath::div(x, y);
+			doubleToCollector(SteamMath::div(accumulator, collectorToDouble()));
+			break;
 		case FACT:
-			return SteamMath::fact(x);
+			doubleToCollector(SteamMath::fact(collectorToDouble()));
+			break;
 		case POW:
-			return SteamMath::pow(x, y);
+			doubleToCollector(SteamMath::pow(accumulator, collectorToDouble()));
+			break;
 		case ROOT:
-			return SteamMath::root(x, y);
+			doubleToCollector(SteamMath::root(collectorToDouble(), accumulator));
+			break;
 		case SIN:
-			return SteamMath::sin(x);
+			doubleToCollector(SteamMath::sin(collectorToDouble()));
+			break;
 		case COS:
-			return SteamMath::cos(x);
+			doubleToCollector(SteamMath::cos(collectorToDouble()));
+			break;
 		case TAN:
-			return SteamMath::tan(x);
+			doubleToCollector(SteamMath::tan(collectorToDouble()));
+			break;
 		case COTAN:
-			return SteamMath::cotan(x);
+			doubleToCollector(SteamMath::tan(collectorToDouble()));
+			break;
 	}
+	ans = accumulator;
+	operation = Parnilogika::Operation::UNDEF;
 	return 0;
 }
 
@@ -158,19 +173,57 @@ std::string Parnilogika::collectorToString(){
     return s;
 }
 
-double Parnilogika::processResult() {
-	return Parnilogika::processResult(accumulator, collectorToDouble(), operation);
+void Parnilogika::setOperation(Operation op){
+	if(operation == op){
+		return;
+	}
+	else{
+		operation = op;
+		return;
+	}
+}
+
+std::string Parnilogika::cutTrailingZeros(std::string str) {
+	// Cutting zeros from the end
+	for (int i = str.size()-1; i > 0; i--) {
+		if(str[i] != '0' && str[i] != '.') {
+			break;
+		}
+
+		str.erase(i, 1);
+
+		if(str[i] == '.') {
+			break;
+		}
+	}
+	return str;
+}
+
+void Parnilogika::binaryOperation(Operation op) {
+	// Only overwrite the current acc if collector has real data in it.
+	if(collectorValid) {
+		collectorToAccumulator();
+		collectorValid = false;
+	}
+
+    setOperation(op);
 }
 
 std::string Parnilogika::getDisplayOutput() {
+	// Bad things happen if the line below isn't there.
+	std::setlocale(LC_NUMERIC,"C");
 	std::string s;
-	s = std::to_string(accumulator);
-	char op;
 	switch (operation) {
 		case UNDEF:
-			s = collectorToString();
+
+			s.erase(s.find_last_not_of('0') + 1, std::string::npos);
+			if(floor(accumulator) == accumulator){
+				s.erase(remove(s.begin(), s.end(), '.'), s.end());
+			}
+			s += collectorToString();
 			return s;
 		case SUM:
+			s = std::to_string(accumulator);
 			s.erase(s.find_last_not_of('0') + 1, std::string::npos);
 			if(floor(accumulator) == accumulator){
 				s.erase(remove(s.begin(), s.end(), '.'), s.end());
@@ -178,6 +231,7 @@ std::string Parnilogika::getDisplayOutput() {
 			s += " + " + collectorToString();
 			return s;
 		case SUB:
+			s = std::to_string(accumulator);
 			s.erase(s.find_last_not_of('0') + 1, std::string::npos);
 			if(floor(accumulator) == accumulator){
 				s.erase(remove(s.begin(), s.end(), '.'), s.end());
@@ -185,6 +239,7 @@ std::string Parnilogika::getDisplayOutput() {
 			s += " - " + collectorToString();
 			return s;
 		case MUL:
+			s = std::to_string(accumulator);
 			s.erase(s.find_last_not_of('0') + 1, std::string::npos);
 			if(floor(accumulator) == accumulator){
 				s.erase(remove(s.begin(), s.end(), '.'), s.end());
@@ -192,6 +247,7 @@ std::string Parnilogika::getDisplayOutput() {
 			s += " * " + collectorToString();
 			return s;
 		case DIV:
+			s = std::to_string(accumulator);
 			s.erase(s.find_last_not_of('0') + 1, std::string::npos);
 			if(floor(accumulator) == accumulator){
 				s.erase(remove(s.begin(), s.end(), '.'), s.end());
@@ -199,6 +255,7 @@ std::string Parnilogika::getDisplayOutput() {
 			s += " / " + collectorToString();
 			return s;
 		case POW:
+			s = std::to_string(accumulator);
 			s.erase(s.find_last_not_of('0') + 1, std::string::npos);
 			if(floor(accumulator) == accumulator){
 				s.erase(remove(s.begin(), s.end(), '.'), s.end());
@@ -206,16 +263,22 @@ std::string Parnilogika::getDisplayOutput() {
 			s += " ^ " + collectorToString();
 			return s;
 		case ROOT:
+			s = std::to_string(accumulator);
 			s.erase(s.find_last_not_of('0') + 1, std::string::npos);
 			if(floor(accumulator) == accumulator){
 				s.erase(remove(s.begin(), s.end(), '.'), s.end());
 			}
 			s += " √ " + collectorToString();
 			return s;
-//		case SIN:
-//		case COS:
-//		case TAN:
-//		case COTAN:
+		case SIN:
+			s = "sin(" + collectorToString() + ")";
+			return s;
+		case COS:
+			s = collectorToString();
+		case TAN:
+			s = collectorToString();
+		case COTAN:
+			s = collectorToString();
 
 	}
 }
