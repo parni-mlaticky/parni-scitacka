@@ -91,12 +91,10 @@ void ParniScitacka::on_ButtonDot_clicked()
 
 void ParniScitacka::on_ButtonPlus_clicked()
 {
-	Parnilogika::Operation op = Parnilogika::pl->SUM;
 //	if(op == Parnilogika::pl->operation){
 //		return;
 //	}
-    Parnilogika::pl->collectorToAccumulator();
-    Parnilogika::pl->setOperation(op);
+    Parnilogika::pl->binaryOperation(Parnilogika::pl->SUM);
     ParniScitacka::ui->Display->setText(QString::fromStdString(Parnilogika::pl->getDisplayOutput()));
 }
 
@@ -106,37 +104,32 @@ void ParniScitacka::on_ButtonMinus_clicked()
 //	if(op == Parnilogika::pl->operation){
 //		return;
 //	}
-    Parnilogika::pl->collectorToAccumulator();
-    Parnilogika::pl->setOperation(Parnilogika::pl->SUB);
+    Parnilogika::pl->binaryOperation(Parnilogika::pl->SUB);
     ParniScitacka::ui->Display->setText(QString::fromStdString(Parnilogika::pl->getDisplayOutput()));
 }
 
 void ParniScitacka::on_ButtonMultiply_clicked()
 {
-    Parnilogika::pl->collectorToAccumulator();
-    Parnilogika::pl->setOperation(Parnilogika::pl->MUL);
+    Parnilogika::pl->binaryOperation(Parnilogika::pl->MUL);
     ParniScitacka::ui->Display->setText(QString::fromStdString(Parnilogika::pl->getDisplayOutput()));
 }
 
 void ParniScitacka::on_ButtonDivide_clicked()
 {
-    Parnilogika::pl->collectorToAccumulator();
-    Parnilogika::pl->setOperation(Parnilogika::pl->DIV);
+    Parnilogika::pl->binaryOperation(Parnilogika::pl->DIV);
     ParniScitacka::ui->Display->setText(QString::fromStdString(Parnilogika::pl->getDisplayOutput()));
 }
 
 
 void ParniScitacka::on_ButtonPow_clicked()
 {
-    Parnilogika::pl->collectorToAccumulator();
-    Parnilogika::pl->setOperation(Parnilogika::pl->POW);
+    Parnilogika::pl->binaryOperation(Parnilogika::pl->POW);
     ParniScitacka::ui->Display->setText(QString::fromStdString(Parnilogika::pl->getDisplayOutput()));
 }
 
 void ParniScitacka::on_ButtonSqrt_clicked()
 {
-    Parnilogika::pl->collectorToAccumulator();
-    Parnilogika::pl->setOperation(Parnilogika::pl->ROOT);
+    Parnilogika::pl->binaryOperation(Parnilogika::pl->ROOT);
     ParniScitacka::ui->Display->setText(QString::fromStdString(Parnilogika::pl->getDisplayOutput()));
 }
 

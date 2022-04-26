@@ -25,6 +25,12 @@ class Parnilogika {
 	std::vector<char> collector;
 
 	/**
+	 * True, when collector contains a valid value.
+	 * Might be false when the user hasn't inputed anything into the collector.
+	 */
+	bool collectorValid;
+
+	/**
 	 * Result of the previous operation
 	 */
 	double ans;
@@ -131,6 +137,21 @@ class Parnilogika {
 	 * @return content of collector converted to string
 	 */
 	std::string collectorToString();
+
+	/**
+	* Remove trailing zeroes from the end of the number.
+	* @param str The string containing the number
+	* @return the number in str but without trailing zeroes at the end.
+	*/
+	static std::string cutTrailingZeros(std::string str);
+
+	/**
+	* Sets operation and does aditional arrangements needed.
+	* This function should be called by every binary operator.
+	* @param op The binary operation that will be set.
+	*/
+void binaryOperation(Operation op);
+
 
 	/**
 	 * @brief converts numbers and operations to a format that is then displayed on the calculator screen

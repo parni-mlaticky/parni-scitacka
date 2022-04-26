@@ -9,6 +9,7 @@ using namespace sm;
 Parnilogika *Parnilogika::pl = nullptr;
 
 Parnilogika::Parnilogika() {
+	std::setlocale(LC_NUMERIC,"C");
 	Parnilogika::reset();
 }
 
@@ -44,14 +45,12 @@ double Parnilogika::collectorToDouble() {
 void Parnilogika::doubleToCollector(double f) {
 	eraseCollector();
 
-	const std::string oldLocale=std::setlocale(LC_NUMERIC,nullptr);
 
 	std::setlocale(LC_NUMERIC,"C");
 	std::string str = std::to_string(f);
-	std::setlocale(LC_NUMERIC,oldLocale.c_str());
-	str.erase(str.find_last_not_of('0') + 1, std::string::npos);
+	str = cutTrailingZeros(str);
 
-	for (int i = 0; (size_t) i < str.length()-1; i++) {
+	for (int i = 0; (size_t) i < str.length(); i++) {
 		appendToCollector(str[i]);
 	}
 
@@ -65,6 +64,7 @@ void Parnilogika::eraseCollector() {
 }
 
 void Parnilogika::appendToCollector(char c) {
+	collectorValid = true;
 	collector.push_back(c);
 }
 
@@ -96,6 +96,7 @@ bool Parnilogika::isCollectorDecimal() {
 void Parnilogika::reset() {
 	accumulator = 0;
 	collector = std::vector<char>();
+	collectorValid = false;
 	operation = Parnilogika::Operation::UNDEF;
 }
 
@@ -110,6 +111,7 @@ double Parnilogika::processResult() {
 			break;
 		case SUM:
 			doubleToCollector(SteamMath::sum(accumulator, collectorToDouble()));
+			std::cout << collectorToString() << std::endl;
 			 break;
 		case SUB:
 			doubleToCollector(SteamMath::sub(accumulator, collectorToDouble()));
@@ -181,7 +183,35 @@ void Parnilogika::setOperation(Operation op){
 	}
 }
 
+std::string Parnilogika::cutTrailingZeros(std::string str) {
+	// Cutting zeros from the end
+	for (int i = str.size()-1; i > 0; i--) {
+		if(str[i] != '0' && str[i] != '.') {
+			break;
+		}
+
+		str.erase(i, 1);
+
+		if(str[i] == '.') {
+			break;
+		}
+	}
+	return str;
+}
+
+void Parnilogika::binaryOperation(Operation op) {
+	// Only overwrite the current acc if collector has real data in it.
+	if(collectorValid) {
+		collectorToAccumulator();
+		collectorValid = false;
+	}
+
+    setOperation(op);
+}
+
 std::string Parnilogika::getDisplayOutput() {
+	// Bad things happen if the line below isn't there.
+	std::setlocale(LC_NUMERIC,"C");
 	std::string s;
 	switch (operation) {
 		case UNDEF:
