@@ -185,6 +185,18 @@ void Parnilogika::setOperation(Operation op){
 
 std::string Parnilogika::cutTrailingZeros(std::string str) {
 	// Cutting zeros from the end
+	bool hasDecimal = false;
+	for (char c : str) {
+		if (c == '.') {
+			hasDecimal = true;
+			break;
+		}
+	}
+
+	if (!hasDecimal) {
+		return str;
+	}
+
 	for (int i = str.size()-1; i > 0; i--) {
 		if(str[i] != '0' && str[i] != '.') {
 			break;
