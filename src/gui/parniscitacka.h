@@ -7,6 +7,10 @@
 #ifndef PARNISCITACKA_H
 #define PARNISCITACKA_H
 
+#define ABOUT_STRING "<p>Ikonka aplikace pochází z balíčku Breeze Icons, distribuovaný pod licencí GPLv3\n</p>"
+#define ICON_LINK "<a href=https://github.com/KDE/breeze-icons>Icon source Link</a>"
+#define ABOUT_MESSAGE ABOUT_STRING ICON_LINK
+
 #include <QMainWindow>
 #include <QKeyEvent>
 
