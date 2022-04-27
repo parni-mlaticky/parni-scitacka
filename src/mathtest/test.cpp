@@ -13,6 +13,8 @@ using namespace sm;
 TEST(basic, addTest){
 	EXPECT_TRUE(SteamMath::sum(1.5, 1.5) == 3.0);
 	EXPECT_TRUE(SteamMath::sum(1.5, -5) == -3.5);
+	EXPECT_TRUE(SteamMath::sum(0.25, 0.25) == 0.5);
+	EXPECT_TRUE(SteamMath::sum(0.1, 0.4) == 0.5);
 }
 
 TEST(basic, subTest){
