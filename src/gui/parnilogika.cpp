@@ -174,13 +174,7 @@ std::string Parnilogika::collectorToString(){
 }
 
 void Parnilogika::setOperation(Operation op){
-	if(operation == op){
-		return;
-	}
-	else{
-		operation = op;
-		return;
-	}
+	operation = op;
 }
 
 std::string Parnilogika::cutTrailingZeros(std::string str) {
@@ -213,12 +207,15 @@ std::string Parnilogika::cutTrailingZeros(std::string str) {
 }
 
 void Parnilogika::binaryOperation(Operation op) {
+	if(collectorValid && (operation != UNDEF)){
+		processResult();
+	}
+
 	// Only overwrite the current acc if collector has real data in it.
 	if(collectorValid) {
 		collectorToAccumulator();
 		collectorValid = false;
 	}
-
     setOperation(op);
 }
 
@@ -228,7 +225,6 @@ std::string Parnilogika::getDisplayOutput() {
 	std::string s;
 	switch (operation) {
 		case UNDEF:
-
 			s += collectorToString();
 			s = cutTrailingZeros(s);
 			return s;
