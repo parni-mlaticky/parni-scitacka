@@ -1,3 +1,9 @@
+/**
+ * @file parnilogika.cpp
+ * @authors Ondřej Zobal, Vladimír Hucovič
+ * @brief Contains the definitions of functions that control the backend of the calculator
+ */
+
 #include "parnilogika.h"
 #include "../steammath/steammath.h"
 #include <string>
@@ -98,11 +104,6 @@ void Parnilogika::reset() {
 	collector = std::vector<char>();
 	collectorValid = false;
 	operation = Parnilogika::Operation::UNDEF;
-}
-
-std::vector<double> getQuadRoot(double a, double b, double c){
-	// TODO we have to figure out how to handle this
-	return SteamMath::quadRoot(a, b ,c);
 }
 
 double Parnilogika::processResult() {
