@@ -1,3 +1,9 @@
+/**
+ * @file parniscitacka.cpp
+ * @authors Vladimír Hucovič, Petr Kolouch
+ * @brief module that contains the definition of functions that get called when buttons are pressed
+ */
+
 #include "parniscitacka.h"
 #include "ui_parniscitacka.h"
 #include "parnilogika.h"
@@ -6,8 +12,6 @@
 
 ParniScitacka::ParniScitacka(QWidget *parent) : QMainWindow(parent), ui(new Ui::ParniScitacka) {
 	ui->setupUi(this);
-
-
 }
 
 ParniScitacka::~ParniScitacka() {
@@ -92,19 +96,12 @@ void ParniScitacka::on_ButtonDot_clicked()
 
 void ParniScitacka::on_ButtonPlus_clicked()
 {
-//	if(op == Parnilogika::pl->operation){
-//		return;
-//	}
     Parnilogika::pl->binaryOperation(Parnilogika::pl->SUM);
     ParniScitacka::ui->Display->setText(QString::fromStdString(Parnilogika::pl->getDisplayOutput()));
 }
 
 void ParniScitacka::on_ButtonMinus_clicked()
 {
-	Parnilogika::Operation op = Parnilogika::pl->SUB;
-//	if(op == Parnilogika::pl->operation){
-//		return;
-//	}
     Parnilogika::pl->binaryOperation(Parnilogika::pl->SUB);
     ParniScitacka::ui->Display->setText(QString::fromStdString(Parnilogika::pl->getDisplayOutput()));
 }
@@ -146,9 +143,46 @@ void ParniScitacka::on_ButtonSin_clicked()
     ParniScitacka::ui->Display->setText(QString::fromStdString(Parnilogika::pl->getDisplayOutput()));
 }
 
-void ParniScitacka::on_actionAbout_triggered()
+void ParniScitacka::on_ButtonCos_clicked()
 {
-    QMessageBox::information(this, "About", "Epická parní kalkulačka vytvořená Zobem, Vladem, Marem a Kolem");
+	Parnilogika::pl->setOperation(Parnilogika::pl->COS);
+	ParniScitacka::ui->Display->setText(QString::fromStdString(Parnilogika::pl->getDisplayOutput()));
+}
+
+void ParniScitacka::on_ButtonTan_clicked()
+{
+	Parnilogika::pl->setOperation(Parnilogika::pl->TAN);
+	ParniScitacka::ui->Display->setText(QString::fromStdString(Parnilogika::pl->getDisplayOutput()));
+}
+
+void ParniScitacka::on_ButtonCotan_clicked()
+{
+	Parnilogika::pl->setOperation(Parnilogika::pl->COTAN);
+	ParniScitacka::ui->Display->setText(QString::fromStdString(Parnilogika::pl->getDisplayOutput()));
+}
+
+void ParniScitacka::on_ButtonAns_clicked()
+{
+	Parnilogika::pl->ansToCollector();
+	ParniScitacka::ui->Display->setText(QString::fromStdString(Parnilogika::pl->getDisplayOutput()));
+}
+
+void ParniScitacka::on_ButtonFact_clicked()
+{
+	Parnilogika::pl->setOperation(Parnilogika::pl->FACT);
+	ParniScitacka::ui->Display->setText(QString::fromStdString(Parnilogika::pl->getDisplayOutput()));
+}
+
+void ParniScitacka::on_ButtonEuler_clicked()
+{
+	Parnilogika::pl->eToCollector();
+	ParniScitacka::ui->Display->setText(QString::fromStdString(Parnilogika::pl->getDisplayOutput()));
+}
+
+void ParniScitacka::on_ButtonPI_clicked()
+{
+	Parnilogika::pl->piToCollector();
+	ParniScitacka::ui->Display->setText(QString::fromStdString(Parnilogika::pl->getDisplayOutput()));
 }
 
 
@@ -157,3 +191,7 @@ void ParniScitacka::on_actionHistory_triggered()
     QMessageBox::information(this, "History", "TODO");
 }
 
+void ParniScitacka::on_actionAbout_triggered()
+{
+	QMessageBox::information(this, "About", "Epická parní kalkulačka vytvořená Zobem, Vladem, Marem a Kolem");
+}

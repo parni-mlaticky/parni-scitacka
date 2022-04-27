@@ -13,12 +13,13 @@
 // for testing I used ./stddev < test.txt which includes many kinds of pain, but not all
 
 /**
- * Simple CLI app, which performs standard deviation calculation on number from stdin.
  * @package standard-deviation
+ * @brief namespace of the standard-deviation app
  * @author Marek Havel
  * @date 2022-04-24
  * @version 1.0
  * @file stddev.cpp
+ * @brief Simple CLI app, which performs standard deviation calculation on number from stdin.
  * @return standard deviation on stdout.
  * @return 0 if everything was successful.
  */
