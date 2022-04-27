@@ -8,7 +8,7 @@
 #define PARNISCITACKA_H
 
 #include <QMainWindow>
-
+#include <QKeyEvent>
 
 /**
  * @namespace Ui
@@ -69,6 +69,10 @@ private slots:
     void on_ButtonEuler_clicked();
     void on_ButtonPI_clicked();
     void on_ButtonSwitch_clicked();
+    void on_ButtonFunctions_clicked();
+
+protected:
+    void keyPressEvent(QKeyEvent* event);
 
 private:
 	Ui::ParniScitacka *ui;
