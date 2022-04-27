@@ -148,7 +148,7 @@ void ParniScitacka::on_ButtonSin_clicked()
 
 void ParniScitacka::on_actionAbout_triggered()
 {
-    QMessageBox::information(this, "About", "Epická parní kalkulačka vytvořená Zobem, Vladem, Marem a Kolem");
+    QMessageBox::information(this, "About", ABOUT_MESSAGE);
 }
 
 
