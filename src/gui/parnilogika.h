@@ -30,13 +30,18 @@ class Parnilogika {
 	std::vector<char> collector;
 
 	/**
-	 * @brief True, when collector contains a valid value. Might be false when the user hasn't inputted anything into the collector.
-	 */
+	* @brief True, when collector contains a valid value. Might be false when the user hasn't inputted anything into the collector.
+	*/
 	bool collectorValid;
 
 	/**
-	 * @brief Result of the previous operation
-	 */
+	* @brief True, when collector the result of a previous operation.
+	*/
+	bool collectorHasPlaceholder;
+
+	/**
+	* @brief Result of the previous operation
+	*/
 	double ans;
 
 	/**
@@ -46,9 +51,17 @@ class Parnilogika {
 	Operation operation;
 
 	/**
+	* String containing endline-separated entries of every calculation
+	* done this session.
+	*/
+	std::string history;
+
+	/**
+	* This class is ment to be used as a singleton, this is a static variable, where the refference to the primary instance will be stored.
 	* @brief This class is meant to be used as a singleton, this is a static variable, where the reference to the primary instance will be stored.
 	*/
 	static Parnilogika *pl;
+
 	/**
 	* @brief Simply initializes the internal variables.
 	*/
@@ -123,7 +136,7 @@ class Parnilogika {
 	* Collector and accumulator remain unchanged.
 	* @return The result of the operands and operation
 	*/
-	double processResult();
+	void processResult();
 
 	/**
 	 * @brief Converts the content of the collector to string
@@ -139,9 +152,16 @@ class Parnilogika {
 	static std::string cutTrailingZeros(std::string str);
 
 	/**
-	* @brief Sets operation and does additional arrangements needed.
-	* This function should be called by every binary operator.
-	* @param op The binary operation that will be set.
+	* @brief sets operation and does additional arrangements needed.
+	* this function should be called by every binary operator.
+	* @param op the binary operation that will be set.
+	*/
+void unaryOperation(Operation op);
+
+	/**
+	* @brief sets operation and does additional arrangements needed.
+	* this function should be called by every binary operator.
+	* @param op the binary operation that will be set.
 	*/
 	void binaryOperation(Operation op);
 

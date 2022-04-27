@@ -139,25 +139,25 @@ void ParniScitacka::on_ButtonEqual_clicked()
 
 void ParniScitacka::on_ButtonSin_clicked()
 {
-    Parnilogika::pl->setOperation(Parnilogika::pl->SIN);
+    Parnilogika::pl->unaryOperation(Parnilogika::pl->SIN);
     ParniScitacka::ui->Display->setText(QString::fromStdString(Parnilogika::pl->getDisplayOutput()));
 }
 
 void ParniScitacka::on_ButtonCos_clicked()
 {
-	Parnilogika::pl->setOperation(Parnilogika::pl->COS);
+	Parnilogika::pl->unaryOperation(Parnilogika::pl->COS);
 	ParniScitacka::ui->Display->setText(QString::fromStdString(Parnilogika::pl->getDisplayOutput()));
 }
 
 void ParniScitacka::on_ButtonTan_clicked()
 {
-	Parnilogika::pl->setOperation(Parnilogika::pl->TAN);
+	Parnilogika::pl->unaryOperation(Parnilogika::pl->TAN);
 	ParniScitacka::ui->Display->setText(QString::fromStdString(Parnilogika::pl->getDisplayOutput()));
 }
 
 void ParniScitacka::on_ButtonCotan_clicked()
 {
-	Parnilogika::pl->setOperation(Parnilogika::pl->COTAN);
+	Parnilogika::pl->unaryOperation(Parnilogika::pl->COTAN);
 	ParniScitacka::ui->Display->setText(QString::fromStdString(Parnilogika::pl->getDisplayOutput()));
 }
 
@@ -169,7 +169,7 @@ void ParniScitacka::on_ButtonAns_clicked()
 
 void ParniScitacka::on_ButtonFact_clicked()
 {
-	Parnilogika::pl->setOperation(Parnilogika::pl->FACT);
+	Parnilogika::pl->unaryOperation(Parnilogika::pl->FACT);
 	ParniScitacka::ui->Display->setText(QString::fromStdString(Parnilogika::pl->getDisplayOutput()));
 }
 

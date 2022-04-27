@@ -70,6 +70,10 @@ void Parnilogika::eraseCollector() {
 }
 
 void Parnilogika::appendToCollector(char c) {
+	if(collectorHasPlaceholder) {
+		eraseCollector();
+	collectorHasPlaceholder = false;
+	}
 	collectorValid = true;
 	collector.push_back(c);
 }
@@ -103,10 +107,14 @@ void Parnilogika::reset() {
 	accumulator = 0;
 	collector = std::vector<char>();
 	collectorValid = false;
+	collectorHasPlaceholder = false;
 	operation = Parnilogika::Operation::UNDEF;
 }
 
-double Parnilogika::processResult() {
+void Parnilogika::processResult() {
+	if(collectorHasPlaceholder) {
+		return;
+	}
 	switch (operation) {
 		case UNDEF:
 			break;
@@ -147,7 +155,7 @@ double Parnilogika::processResult() {
 	}
 	ans = collectorToDouble();
 	operation = Parnilogika::Operation::UNDEF;
-	return 0;
+	collectorHasPlaceholder = true;
 }
 
 bool Parnilogika::isCollectorNegative() {
@@ -205,6 +213,14 @@ std::string Parnilogika::cutTrailingZeros(std::string str) {
 		}
 	}
 	return str;
+}
+
+void Parnilogika::unaryOperation(Operation op) {
+	// The nature of unary operations allows it to use placeholder value
+	// in form of a result from previous calculation.
+	collectorHasPlaceholder = false;
+
+    setOperation(op);
 }
 
 void Parnilogika::binaryOperation(Operation op) {
