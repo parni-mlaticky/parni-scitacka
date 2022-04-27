@@ -1,3 +1,9 @@
+/**
+ * @file parnilogika.cpp
+ * @authors Ondřej Zobal, Vladimír Hucovič
+ * @brief Contains the definitions of functions that control the backend of the calculator
+ */
+
 #include "parnilogika.h"
 #include "../steammath/steammath.h"
 #include <string>
@@ -100,11 +106,6 @@ void Parnilogika::reset() {
 	operation = Parnilogika::Operation::UNDEF;
 }
 
-std::vector<double> getQuadRoot(double a, double b, double c){
-	// TODO we have to figure out how to handle this
-	return SteamMath::quadRoot(a, b ,c);
-}
-
 double Parnilogika::processResult() {
 	switch (operation) {
 		case UNDEF:
@@ -144,7 +145,7 @@ double Parnilogika::processResult() {
 			doubleToCollector(SteamMath::tan(collectorToDouble()));
 			break;
 	}
-	ans = accumulator;
+	ans = collectorToDouble();
 	operation = Parnilogika::Operation::UNDEF;
 	return 0;
 }
@@ -219,6 +220,18 @@ void Parnilogika::binaryOperation(Operation op) {
     setOperation(op);
 }
 
+void Parnilogika::ansToCollector(){
+	doubleToCollector(ans);
+}
+
+void Parnilogika::piToCollector() {
+	doubleToCollector(SteamMath::const_pi());
+}
+
+void Parnilogika::eToCollector() {
+	doubleToCollector(SteamMath::const_e());
+}
+
 std::string Parnilogika::getDisplayOutput() {
 	// Bad things happen if the line below isn't there.
 	std::setlocale(LC_NUMERIC,"C");
@@ -226,7 +239,6 @@ std::string Parnilogika::getDisplayOutput() {
 	switch (operation) {
 		case UNDEF:
 			s += collectorToString();
-			s = cutTrailingZeros(s);
 			return s;
 		case SUM:
 			s = std::to_string(accumulator);
@@ -258,15 +270,21 @@ std::string Parnilogika::getDisplayOutput() {
 			s = cutTrailingZeros(s);
 			s += " √ " + collectorToString();
 			return s;
+		case FACT:
+			s = collectorToString() + "!";
+			return s;
 		case SIN:
 			s = "sin(" + collectorToString() + ")";
 			return s;
 		case COS:
-			s = collectorToString();
+			s = "cos(" + collectorToString() + ")";
+			return s;
 		case TAN:
-			s = collectorToString();
+			s = "tan(" + collectorToString() + ")";
+			return s;
 		case COTAN:
-			s = collectorToString();
+			s = "cotan(" + collectorToString() + ")";
+			return s;
 
 	}
 }

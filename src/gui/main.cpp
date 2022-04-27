@@ -1,3 +1,9 @@
+/**
+ * @file main.cpp
+ * @authors Ondeřej Zobal
+ * @brief Contains the main function of the app, which starts the calculator
+ */
+
 #include "parniscitacka.h"
 #include "steammath.h"
 #include "parnilogika.h"
@@ -8,6 +14,11 @@
 
 using namespace sm;
 
+/**
+ * Main function. It creates the necessary objects and starts the calculator
+ * @param argc argument count
+ * @param argv vector of arguments
+ */
 int main(int argc, char *argv[])
 {
 	Parnilogika::pl = new Parnilogika();

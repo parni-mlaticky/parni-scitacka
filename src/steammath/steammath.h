@@ -122,6 +122,18 @@ namespace sm {
 			 */
 			static double cotan(double x);
 
+			/**
+			 * @brief a function that returns the number Pi
+			 * @return the number Pi
+			 */
+			static double const_pi();
+
+			/**
+			 * @brief a constant function that returns Euler's number
+			 * @return Euler's number
+			 */
+			 static double const_e();
+
 		private:
 			/**
 			* Checks for FPU errors. If any are found, raise exception.
