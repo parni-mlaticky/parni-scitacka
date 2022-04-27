@@ -195,3 +195,10 @@ void ParniScitacka::on_actionAbout_triggered()
 {
 	QMessageBox::information(this, "About", "Epická parní kalkulačka vytvořená Zobem, Vladem, Marem a Kolem");
 }
+
+void ParniScitacka::on_ButtonSwitch_clicked()
+{
+    Parnilogika::pl->invertCollector();
+    ParniScitacka::ui->Display->setText(QString::fromStdString(Parnilogika::pl->getDisplayOutput()));
+
+}

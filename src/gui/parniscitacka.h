@@ -68,6 +68,7 @@ private slots:
     void on_ButtonFact_clicked();
     void on_ButtonEuler_clicked();
     void on_ButtonPI_clicked();
+    void on_ButtonSwitch_clicked();
 
 private:
 	Ui::ParniScitacka *ui;
