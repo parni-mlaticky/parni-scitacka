@@ -8,7 +8,11 @@ PROFILE_EXEC = stddev
 
 .PHONY: all pack clean test doc run profile mathtest gui
 
-all: gui
+all:
+	cd $(BUILD_DIR) && qmake ../src/src.pro && time make || (printf "\n\033[0;31mBUILD FAILED!\033[0m\n"; false)
+	@echo
+	@printf "\033[32mProjekt build successful (in $(BUILD_DIR))\033[0m\n"
+
 
 # TODO
 pack: gui
