@@ -43,6 +43,12 @@ class Parnilogika {
 	Operation operation;
 
 	/**
+	* String containing endline-separated entries of every calculation
+	* done this session.
+	*/
+	std::string history;
+
+	/**
 	* This class is ment to be used as a singleton, this is a static variable, where the refference to the primary instance will be stored.
 	*/
 	static Parnilogika *pl;

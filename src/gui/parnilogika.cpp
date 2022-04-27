@@ -226,7 +226,6 @@ std::string Parnilogika::getDisplayOutput() {
 	switch (operation) {
 		case UNDEF:
 			s += collectorToString();
-			s = cutTrailingZeros(s);
 			return s;
 		case SUM:
 			s = std::to_string(accumulator);
