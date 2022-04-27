@@ -179,6 +179,14 @@ double SteamMath::cotan(double x) {
 	return result;
 }
 
+double SteamMath::const_pi() {
+	return M_PI;
+}
+
+double SteamMath::const_e() {
+	return M_E;
+}
+
 SmException::SmException(const char* message) {
 	std::cout << message << std::endl;
 }
