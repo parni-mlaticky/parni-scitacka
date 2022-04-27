@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 sudo apt update
-sudo apt install git qtdeclarative5-dev qt5-qmake g++
+sudo apt install git qtdeclarative5-dev qt5-qmake g++ make
 #cd (adresar-programu)/src
-make
+make gui
 sudo cp ../build/gui/gui /usr/bin/parni-scitacka
 sudo chmod a+x /usr/bin/parni-scitacka
 cp meta/parni-scitacka.desktop ~/.local/share/applications
