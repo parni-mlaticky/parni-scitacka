@@ -36,8 +36,15 @@ private slots:
     void on_ButtonSqrt_clicked();
     void on_ButtonEqual_clicked();
     void on_ButtonSin_clicked();
-    void on_actionAbout_triggered();
-    void on_actionHistory_triggered();
+    void on_ButtonCos_clicked();
+    void on_ButtonTan_clicked();
+    void on_ButtonCotan_clicked();
+    void on_ButtonAns_clicked();
+	void on_actionAbout_triggered();
+	void on_actionHistory_triggered();
+    void on_ButtonFact_clicked();
+    void on_ButtonEuler_clicked();
+    void on_ButtonPI_clicked();
 
 private:
 	Ui::ParniScitacka *ui;

@@ -160,5 +160,27 @@ void binaryOperation(Operation op);
 	 */
 	std::string getDisplayOutput();
 
+	/**
+	 * @brief sets the value of the operation variable
+	 * @param op the operation to be set
+	 */
 	void setOperation(Operation op);
+
+	/**
+	 * @brief moves the value of ans to collector
+	 */
+	void ansToCollector();
+
+	/**
+	 * @brief moves the number Pi to collector
+	 */
+	void piToCollector();
+
+	/**
+	 * @brief moves Euler's number to collector
+	 */
+	void eToCollector();
+
+
 };
+
