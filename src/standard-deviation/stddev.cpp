@@ -39,6 +39,8 @@ using namespace sm;
  */
 double stddev_sample(double *data, int n)
 {
+    double std_dev;
+    try {
     double sum = 0.0;
     for (int i = 0; i < n; i++) //add all numbers in *data
     {
@@ -54,7 +56,12 @@ double stddev_sample(double *data, int n)
     }
 
     variance = SteamMath::div(variance, SteamMath::sub(n, 1)); // Correction using sample amount, variance /= (n - 1);
-    double std_dev = SteamMath::root(variance,2); // calculate standard deviation from variance, sqrt(variance)
+    std_dev = SteamMath::root(variance,2); // calculate standard deviation from variance, sqrt(variance)
+    }
+    catch (const char* message) { // Catches a throw with same data type
+        cout << message << endl; // Outputs information about exception
+        return 0.0;
+    }
 
     return std_dev;
 }
