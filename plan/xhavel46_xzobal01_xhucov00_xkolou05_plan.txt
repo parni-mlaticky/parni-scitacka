@@ -1,0 +1,41 @@
+UTF-8 encoded file
+
+Hlavní termíny:
+ - deadline TDD knihovny  - 2022-04-10
+ - deadline GUI           - 2022-04-24
+ - deadline installer+etc - 2022-04-26
+ - deadline user docs     - 2022-04-27
+ - deadline mockup        - 2022-04-28
+
+General úkoly:
+ - .editorconfig                                 - provede xzobal01 - zkontroluje xkolou05 - target 2022-03-21
+ - základní adresářová stuktura repozitáře       - provede xzobal01 - zkontroluje xkolou05 - target 2022-03-21
+ - Setup Doxygenu                                -    vede xhavel46 - zkontroluje xhucov00 - target 2022-03-21
+ - Setup Makefile                                - provede xzobal01 - zkontroluje xkolou05 - target 2022-03-28
+ 
+ - MathLib headers + specifikace fcí             - provede xkolou05 - zkontroluje xzobal01 - target 2022-03-28
+ - Definice testů pro TDD math knihovny          - provede xhucov00 - zkontroluje xkolou05 - target 2022-03-31
+ - Develoment math lib (+-*/) (factorial)        - provede xzobal01 - zkontroluje xhucov00 - target 2022-04-09
+ - Výroba debugging screenshotu                  - provede xzobal01 - zkontroluje xkolou05 - target 2022-04-09
+ - Develoment math lib (mocniny, odmocniny)      - provede xhucov00 - zkontroluje xzobal01 - target 2022-04-09
+ - Profiling                                     - provede xhavel46 - zkontroluje xkolou05 - target 2022-04-16
+ 
+ - GUI                                           -    vede xkolou05 - zkontroluje xhavel46 - target 2022-04-24
+ 
+ - Kontrola vygenerované programátorské příručky                    - zkontroluje xhavel46 - target 2022-04-25
+ - Příprava instalace u guesta                   - provede xhavel46 - zkontroluje xzobal01 - target 2022-04-26
+ - Uživatelská příručka (LaTeX)                  - provede xhavel46 - zkontroluje xhucov00 - target 2022-04-27
+ - Mockup další expanze uživatelského rozhraní   -    vede xkolou05 - zkontroluje *        - target 2022-04-28
+
+Zvolené komunikační kanály:
+ - Discord
+   - obecná komunikace týmu (humor, svolávání rad)
+   - key decisions uložené v omezeném kanálu #useful-info
+   - na offtopic příspěvky používejme kanál k tomu určený (#spamchat-botchat)
+ - GitHub
+   - Issues + Pull Requests na žádosti o přidání featur a řešení problémů
+
+Zvolený systém pro správu verzí: git
+ - repozitář k dispozici na: https://github.com/parni-mlaticky/parni-scitacka
+ - práva přidělena uživateli ivskontrola (ivskontrola@gmail.com)
+
