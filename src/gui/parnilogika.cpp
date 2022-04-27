@@ -198,13 +198,14 @@ std::string Parnilogika::cutTrailingZeros(std::string str) {
 	}
 
 	for (int i = str.size()-1; i > 0; i--) {
-		if(str[i] != '0' && str[i] != '.') {
+		if(str[i] == '0') {
+			str.erase(i, 1);
+		}
+		else if(str[i] == '.') {
+			str.erase(i, 1);
 			break;
 		}
-
-		str.erase(i, 1);
-
-		if(str[i] == '.') {
+		else {
 			break;
 		}
 	}
@@ -228,58 +229,37 @@ std::string Parnilogika::getDisplayOutput() {
 	switch (operation) {
 		case UNDEF:
 
-			s.erase(s.find_last_not_of('0') + 1, std::string::npos);
-			if(floor(accumulator) == accumulator){
-				s.erase(remove(s.begin(), s.end(), '.'), s.end());
-			}
 			s += collectorToString();
+			s = cutTrailingZeros(s);
 			return s;
 		case SUM:
 			s = std::to_string(accumulator);
-			s.erase(s.find_last_not_of('0') + 1, std::string::npos);
-			if(floor(accumulator) == accumulator){
-				s.erase(remove(s.begin(), s.end(), '.'), s.end());
-			}
+			s = cutTrailingZeros(s);
 			s += " + " + collectorToString();
 			return s;
 		case SUB:
 			s = std::to_string(accumulator);
-			s.erase(s.find_last_not_of('0') + 1, std::string::npos);
-			if(floor(accumulator) == accumulator){
-				s.erase(remove(s.begin(), s.end(), '.'), s.end());
-			}
+			s = cutTrailingZeros(s);
 			s += " - " + collectorToString();
 			return s;
 		case MUL:
 			s = std::to_string(accumulator);
-			s.erase(s.find_last_not_of('0') + 1, std::string::npos);
-			if(floor(accumulator) == accumulator){
-				s.erase(remove(s.begin(), s.end(), '.'), s.end());
-			}
+			s = cutTrailingZeros(s);
 			s += " * " + collectorToString();
 			return s;
 		case DIV:
 			s = std::to_string(accumulator);
-			s.erase(s.find_last_not_of('0') + 1, std::string::npos);
-			if(floor(accumulator) == accumulator){
-				s.erase(remove(s.begin(), s.end(), '.'), s.end());
-			}
+			s = cutTrailingZeros(s);
 			s += " / " + collectorToString();
 			return s;
 		case POW:
 			s = std::to_string(accumulator);
-			s.erase(s.find_last_not_of('0') + 1, std::string::npos);
-			if(floor(accumulator) == accumulator){
-				s.erase(remove(s.begin(), s.end(), '.'), s.end());
-			}
+			s = cutTrailingZeros(s);
 			s += " ^ " + collectorToString();
 			return s;
 		case ROOT:
 			s = std::to_string(accumulator);
-			s.erase(s.find_last_not_of('0') + 1, std::string::npos);
-			if(floor(accumulator) == accumulator){
-				s.erase(remove(s.begin(), s.end(), '.'), s.end());
-			}
+			s = cutTrailingZeros(s);
 			s += " √ " + collectorToString();
 			return s;
 		case SIN:
