@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+sudo apt update
 sudo apt install git qtdeclarative5-dev qt5-qmake g++
 #cd (adresar-programu)/src
 make
