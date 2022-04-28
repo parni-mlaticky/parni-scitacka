@@ -29,17 +29,21 @@ class Parnilogika {
 	std::vector<char> collector;
 
 	/**
-	* @brief True, when collector contains a valid value. Might be false when the user hasn't inputted anything into the collector.
+	* @brief Checks if the collector contains a valid number
+	* @return true if the collector contains a valid value
+	* @return false if the collector contains an invalid value
 	*/
 	bool collectorValid;
 
 	/**
-	* @brief True, when collector the result of a previous operation.
+	* @brief Checks if collector contains the result of the previous operation
+	* @return true if the collector contains the result of the previous operation
+	* @return false if the collector does not contain the result of the previous operation
 	*/
 	bool collectorHasPlaceholder;
 
 	/**
-	* @brief Result of the previous operation
+	* @brief Stores the result of the previous operation
 	*/
 	double ans;
 
@@ -47,16 +51,18 @@ class Parnilogika {
 	* @brief Enum for storing the selected operation
 	*/
 	enum Operation { UNDEF, SUM, SUB, MUL, DIV, FACT, POW, ROOT, SIN, COS, TAN, COTAN };
+	/**
+	 * @brief Stores the currently selected operation
+	 */
 	Operation operation;
 
 	/**
-	* String containing endline-separated entries of every calculation
+	* @brief String containing endline-separated entries of every calculation
 	* done this session.
 	*/
 	std::string history;
 
 	/**
-	* This class is ment to be used as a singleton, this is a static variable, where the refference to the primary instance will be stored.
 	* @brief This class is meant to be used as a singleton, this is a static variable, where the reference to the primary instance will be stored.
 	*/
 	static Parnilogika *pl;
@@ -120,8 +126,9 @@ class Parnilogika {
 	void reset();
 
 	/**
-	* @brief Tells you, whther the collector contains is negative.
-	* @return true if collector begins with a minus.
+	* @brief Checks whether the number in the collector is negative.
+	* @return true if collector is negative
+	* @return false if collector is positive
 	*/
 	bool isCollectorNegative();
 
@@ -152,7 +159,7 @@ class Parnilogika {
 
 	/**
 	* @brief sets operation and does additional arrangements needed.
-	* this function should be called by every binary operator.
+	* this function should be called by every unary operator.
 	* @param op the binary operation that will be set.
 	*/
 	void unaryOperation(Operation op);
