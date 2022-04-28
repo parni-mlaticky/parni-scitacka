@@ -9,12 +9,15 @@
 #include <string>
 #include <iostream>
 #include <locale>
+#include <sstream>
+
 
 using namespace sm;
 
 Parnilogika *Parnilogika::pl = nullptr;
 
 Parnilogika::Parnilogika() {
+	displayPrecision = 5;
 	std::setlocale(LC_NUMERIC,"C");
 	Parnilogika::reset();
 }
@@ -51,10 +54,11 @@ double Parnilogika::collectorToDouble() {
 void Parnilogika::doubleToCollector(double f) {
 	eraseCollector();
 
-
 	std::setlocale(LC_NUMERIC,"C");
-	std::string str = std::to_string(f);
-	str = cutTrailingZeros(str);
+	std::ostringstream out;
+	out.precision(PRECISION);
+	out << std::fixed << f;
+	std::string str = cutTrailingZeros(out.str());
 
 	for (int i = 0; (size_t) i < str.length(); i++) {
 		appendToCollector(str[i]);
@@ -81,6 +85,11 @@ void Parnilogika::appendToCollector(char c) {
 char Parnilogika::popCollector() {
 	// Poping an empty vector causes segfaults.
 	if(collector.size() == 0) {
+		return '\0';
+	}
+
+	if(collectorHasPlaceholder) {
+		eraseCollector();
 		return '\0';
 	}
 
@@ -120,7 +129,6 @@ void Parnilogika::processResult() {
 			break;
 		case SUM:
 			doubleToCollector(SteamMath::sum(accumulator, collectorToDouble()));
-			std::cout << collectorToString() << std::endl;
 			 break;
 		case SUB:
 			doubleToCollector(SteamMath::sub(accumulator, collectorToDouble()));
@@ -252,37 +260,56 @@ std::string Parnilogika::getDisplayOutput() {
 	// Bad things happen if the line below isn't there.
 	std::setlocale(LC_NUMERIC,"C");
 	std::string s;
+	std::ostringstream out;
+	out.precision(displayPrecision);
+
 	switch (operation) {
 		case UNDEF:
-			s += collectorToString();
+			if (collectorHasPlaceholder) {
+				std::ostringstream out;
+				out.precision(displayPrecision);
+
+				out << std::fixed << collectorToDouble();
+				s = cutTrailingZeros(out.str());
+			}
+			else {
+				s += collectorToString();
+			}
+
 			return s;
 		case SUM:
-			s = std::to_string(accumulator);
+			out << std::fixed << accumulator;
+			s = out.str();
 			s = cutTrailingZeros(s);
 			s += " + " + collectorToString();
 			return s;
 		case SUB:
-			s = std::to_string(accumulator);
+			out << std::fixed << accumulator;
+			s = out.str();
 			s = cutTrailingZeros(s);
 			s += " - " + collectorToString();
 			return s;
 		case MUL:
-			s = std::to_string(accumulator);
+			out << std::fixed << accumulator;
+			s = out.str();
 			s = cutTrailingZeros(s);
 			s += " * " + collectorToString();
 			return s;
 		case DIV:
-			s = std::to_string(accumulator);
+			out << std::fixed << accumulator;
+			s = out.str();
 			s = cutTrailingZeros(s);
 			s += " / " + collectorToString();
 			return s;
 		case POW:
-			s = std::to_string(accumulator);
+			out << std::fixed << accumulator;
+			s = out.str();
 			s = cutTrailingZeros(s);
 			s += " ^ " + collectorToString();
 			return s;
 		case ROOT:
-			s = std::to_string(accumulator);
+			out << std::fixed << accumulator;
+			s = out.str();
 			s = cutTrailingZeros(s);
 			s += " √ " + collectorToString();
 			return s;
