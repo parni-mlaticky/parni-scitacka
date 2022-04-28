@@ -12,4 +12,5 @@ doc/
 *.pro.user.*
 
 manual/*.aux
+manual/*.log
 manual/*.pdf
