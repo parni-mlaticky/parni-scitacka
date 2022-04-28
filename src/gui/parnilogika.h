@@ -2,7 +2,6 @@
 * @brief Contains the Parnilogika class which handles the backend of the calculator
 * @file parnilogika.h
 * @authors Ondřej Zobal, Vladimír Hucovič
-* @todo changeCollectorSign Adds or removes - at the beginning of the collector.
 */
 
 #include <vector>
@@ -156,7 +155,7 @@ class Parnilogika {
 	* this function should be called by every binary operator.
 	* @param op the binary operation that will be set.
 	*/
-void unaryOperation(Operation op);
+	void unaryOperation(Operation op);
 
 	/**
 	* @brief sets operation and does additional arrangements needed.
