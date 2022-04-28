@@ -1830,7 +1830,7 @@ QPushButton:pressed {
      <string notr="true"/>
     </property>
     <property name="title">
-     <string>menu</string>
+     <string>Menu</string>
     </property>
     <addaction name="actionHistory"/>
     <addaction name="actionAbout"/>
