@@ -10,6 +10,7 @@
 #include <iostream>
 #include <QMessageBox>
 #include <QTextEdit>
+#include <QComboBox>
 
 ParniScitacka::ParniScitacka(QWidget *parent) : QMainWindow(parent), ui(new Ui::ParniScitacka) {
 	ui->setupUi(this);
@@ -210,6 +211,23 @@ void ParniScitacka::on_actionHistory_triggered()
       historyWindow->setReadOnly(true);
       historyWindow->setWindowTitle("Historie");
       historyWindow->show();
+
+}
+
+void ParniScitacka::on_actionPrecision_triggered()
+{
+    QGridLayout *grid = new QGridLayout(this);
+    QComboBox *comboBox = new QComboBox();
+    comboBox->addItem("5");
+    comboBox->addItem("10");
+    comboBox->addItem("14");
+    comboBox->setFixedHeight(50);
+    comboBox->setFixedWidth(200);
+    comboBox->setWindowTitle("Nastavení přesnosti");
+    grid->addWidget(comboBox);
+    //current value
+    //comboBox->itemData(comboBox->currentIndex());
+    comboBox->show();
 
 }
 
