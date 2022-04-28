@@ -2,8 +2,9 @@
 
 \usepackage[top=1.5cm,bottom=1.5cm,left=2.5cm,right=2.5cm]{geometry}
 \usepackage[czech]{babel}
+\usepackage{graphicx}
 
-\title{\Huge Parní sčítačka\\\huge Uživatelská příručka}
+\title{\Huge Parní Sčítačka\\\huge Uživatelská příručka}
 \author{\LARGE tým Parní mlátičky \\ Marek Havel \\ Ondřej Zobal\\ Vladimír Hucovič\\ Petr Kolouch}
 \date{\today}
 
@@ -17,9 +18,13 @@ Vážený uživateli, děkujeme, že jste si zvolil právě náš produkt. Pro n
 
 \subsection*{Instalace pomocí před-sestaveného balíčku (doporučeno)}
 
-Stáhněte instalační balíček, a nainstalujte jej pomocí:
+Instalaci provádí jednoduchý skript, který stáhne závislosti pro sestavení, sestaví aplikaci a poskládá vhodné soubory na vhodná místa.
 
-\verb|sudo apt install parni-scitacka.deb|
+Stáhněte celý základní repozitář, vstupte do něj, dále do složky src a v této složce spusťte soubor installer.sh z nadřazeného adresáře:
+
+\verb|../installer.sh|
+
+Instalátor požaduje oprávnění administrátora, aby mohl doinstalovat závislosti a sestavit program. Instalátor předpokládá přítomnost příkazu \verb|sudo|.
 
 \subsection*{Manuální sestavení a instalace}
 
@@ -41,9 +46,13 @@ Ve zkratce: instalace závislostí, vstoupení do složky src, sestavení, zkop�
 
 \subsection*{Odinstalace předinstalovaného balíčku}
 
-Odinstalace je opravdu jednoduchá. Stačí spustit tento příkaz:
+Odinstalace je prováděna spuštěním odinstalačního skriptu.
 
-\verb|sudo apt remove parni-scitacka|
+Pro odinstalační skript stačí vstoupit do základní složky repozitáře a spustit jej:
+
+\verb|./uninstall.sh|
+
+Pro odinstalaci jsou potřeba práva administrátora.
 
 \subsection*{Manuální odinstalace}
 
@@ -56,8 +65,47 @@ Odinstalace je v podstatě prostě smazání pár věcí z konkrétních složek
 \verb|rm /usr/share/pixmaps/parni-scitacka.xpm|
 
 \pagebreak
-\section*{Jak používat Parní sčítačku}
 
-Používání
+\section*{Jak používat Parní Sčítačku}
+
+\begin{figure}[ht]
+	\begin{center}
+		\includegraphics[scale=0.55]{../screenshot.png}
+		\caption{Uživatelské rozhraní Parní Sčítačky}
+	\end{center}
+\end{figure}
+
+Základem používání kalkulačky je vložení nějaké hodnoty. Pro vepsání číslic lze použít tlačítka na obrazovce nebo klávesy 0-9, a to jak na numerické, tak na alfanumerické části klávesnice. 
+Desetinnou \textit{tečku} lze vložit tlačítkem \verb|.| jak na obrazovce, tak na klávesnici.
+Znaménko nenulové hodnoty lze nastavit pomocí tlačítka \verb|+/-| nebo klávesou \verb|N|.
+Pro smazání poslední zapsané číslice lze použít tlačítko $\Leftarrow$ na obrazovce nebo klávesu backspace.
+
+Operace, které požadují pouze jednu hodnotu, lze vyvolat jak před, tak po zadání čísla.
+
+Funkce kalkulačky jsou k dispozici na následujících klávesách:
+
+\begin{tabular}{|c|c|}
+\hline
+Funkce & Klávesa \\
+\hline
+$x + y$ & + \\
+$x - y$ & - \\
+$x \cdot y$ & * \\
+$x : y$ & / \\
+$x^y$  & U \\
+$\sqrt[n]{x}$ & R \\
+$n!$ & F \\
+$\pi$ & P \\
+$e$ & E \\
+$\sin{x}$ & S \\
+$\cos{x}$ & C \\
+$\tan{x}$ & T \\
+\textit{ans} & A \\
+\hline
+\end{tabular}\\
+
+Výsledek lze získat zmáčknutím klávesy \verb|=| na obrazovce.
+
+V menu v levé horní části obrazovky se lze podívat na dřívější příklady a nastavit přesnost kalkulačky.
 
 \end{document}
