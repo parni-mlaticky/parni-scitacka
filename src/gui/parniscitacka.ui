@@ -1616,7 +1616,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>345</x>
-      <y>145</y>
+      <y>107</y>
       <width>135</width>
       <height>92</height>
      </rect>
@@ -1839,12 +1839,12 @@ QPushButton:pressed {
   </widget>
   <action name="actionHistory">
    <property name="text">
-    <string>History</string>
+    <string>Historie</string>
    </property>
   </action>
   <action name="actionAbout">
    <property name="text">
-    <string>About</string>
+    <string>O kalkulačce</string>
    </property>
   </action>
  </widget>
