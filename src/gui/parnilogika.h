@@ -10,7 +10,7 @@
 #include <cmath>
 #include <algorithm>
 
-#define PRECISION 16
+#define PRECISION 14
 
 /**
  * @class Parnilogika
