@@ -47,7 +47,11 @@ L_ gui/ (Grafická aplikace kalkulačky)
 |   (další soubory...)
 |
 L_ mathtest/ (Kontrolní program pro ladění matematické knihovny bez GUI)
-    L_ test (Spustitelný ladící program)
+|   L_ test (Spustitelný ladící program)
+|   (další soubory...)
+|
+L_ standard-deviation/ (Profiling)
+    L_ stddev (Profiling supstitelný soubor)
     (další soubory...)
 ```
 
@@ -65,4 +69,18 @@ cd steammath
 ../updatefiles
 ```
 
+* * *
+
+## Autoři
+Parní mlátičky
+xzobal01 Ondřej Zobal
+xhucov00 Vladimír Hucovič
+xkolou05 Petr Kolouch
+xhavel46 Marek Havel
+
+## Licence
+Projekt je poskytován pod licencí GNU General Public License v.3. Kopii licence najdete v souboru LICENSE.
+
+## Prostředí
+Ubuntu 64bit
 

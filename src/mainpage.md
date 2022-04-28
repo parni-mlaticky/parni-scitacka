@@ -45,7 +45,11 @@ L_ gui/ (Calculator app with GUI)
 |   (other files...)
 |
 L_ mathtest/ (Automatic tests for the math library)
-    L_ test (Executable test file)
+|   L_ test (Executable test file)
+|   (other files...)
+|
+L_ standard-deviation/ (Profiling)
+    L_ stddev (Profiling executable)
     (other files...)
 ```
 
@@ -62,4 +66,5 @@ cd steammath
 ../updatefiles
 ```
 
-
+## License
+This project is available under the GNU GPL v3. You should have recived a copy of the license in the "LICENSE" file.
