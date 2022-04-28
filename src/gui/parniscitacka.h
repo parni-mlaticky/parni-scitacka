@@ -13,6 +13,8 @@
 
 #include <QMainWindow>
 #include <QKeyEvent>
+#include <QComboBox>
+
 
 /**
  * @namespace Ui
@@ -31,6 +33,10 @@ class ParniScitacka : public QMainWindow
 	Q_OBJECT
 
 public:
+    /**
+     * @brief Variable that holds the reference to the ComboBox for selecting precision
+     */
+    QComboBox *precisionSelect;
 	/**
 	 * @brief Constructor of the app main window
 	 * @param parent parent Element of the window
@@ -167,6 +173,15 @@ private slots:
      * @brief A function that removes the last digit from collector and refreshes the display
      */
     void on_ButtonBackspace_clicked();
+	/**
+	 * @brief A function that opens the precision selection menu
+	 */
+    void on_actionPrecision_triggered();
+	/**
+	 * @brief Function that gets called when the precision is changed in the ComboBox precision menu
+	 * @param index of the ComboBox selection
+	 */
+    void on_ComboBox_index_changed(int value);
 
     void on_actionPrecision_triggered();
 
