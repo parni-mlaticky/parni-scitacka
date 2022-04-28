@@ -158,9 +158,8 @@ namespace sm {
 	};
 
 	/**
-	 * Exception signaling that division by zero has occurred in a calculation
 	 * @class DivisionByZero
-	 * @brief Exception for a division by zero error
+	 * @brief Exception signaling that division by zero has occurred in a calculation
 	 * @param message A message detailing the event.
 	 */
 	class DivisionByZero : sm::SmException {
@@ -168,9 +167,8 @@ namespace sm {
 	};
 
 	/**
-	 * Exception signaling that the output is undefined for this input
 	 * @class OutputUndefined
-	 * @brief Exception for when the output is undefined
+	 * @brief Exception signaling that the output is undefined for this input
 	 * @param message A message detailing the event.
 	 */
 	class OutputUndefined : sm::SmException {
