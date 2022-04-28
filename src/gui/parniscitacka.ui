@@ -1567,7 +1567,7 @@ QPushButton:pressed {
       <x>345</x>
       <y>107</y>
       <width>166</width>
-      <height>115</height>
+      <height>138</height>
      </rect>
     </property>
     <property name="minimumSize">
@@ -1784,6 +1784,7 @@ QPushButton:pressed {
     <addaction name="actionHistory"/>
     <addaction name="actionAbout"/>
     <addaction name="actionPrecision"/>
+    <addaction name="actionnHelp"/>
    </widget>
    <addaction name="menumenu"/>
   </widget>
@@ -1800,6 +1801,11 @@ QPushButton:pressed {
   <action name="actionPrecision">
    <property name="text">
     <string>Nastavení přesnosti</string>
+   </property>
+  </action>
+  <action name="actionnHelp">
+   <property name="text">
+    <string>Nápověda</string>
    </property>
   </action>
  </widget>

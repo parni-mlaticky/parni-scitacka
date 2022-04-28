@@ -6,6 +6,7 @@
 
 #include "parniscitacka.h"
 #include "ui_parniscitacka.h"
+#include "napoveda.h"
 #include "parnilogika.h"
 #include <iostream>
 #include <QMessageBox>
@@ -213,6 +214,17 @@ void ParniScitacka::on_actionHistory_triggered()
       historyWindow->setWindowTitle("Historie");
       historyWindow->show();
 
+}
+
+void ParniScitacka::on_actionnHelp_triggered()
+{
+     QTextEdit *help = new QTextEdit();
+      help->setText(QString:: fromStdString(HELP_MESSAGE));
+      help->setReadOnly(true);
+      help->setWindowTitle("Nápověda");
+      help->setFixedHeight(500);
+      help->setFixedWidth(500);
+      help->show();
 }
 
 void ParniScitacka::on_actionPrecision_triggered()
