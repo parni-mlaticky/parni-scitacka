@@ -134,10 +134,19 @@ void ParniScitacka::on_ButtonSqrt_clicked()
 void ParniScitacka::on_ButtonEqual_clicked()
 {
 	try {
+		// Adding the the operands portion (1 + 1 =) to history.
+		Parnilogika::pl->history += Parnilogika::pl->getDisplayOutput();
+		Parnilogika::pl->history += " = ";
+
 		Parnilogika::pl->processResult();
+
+		// Adding the result to the history.
+		Parnilogika::pl->history += Parnilogika::pl->getDisplayOutput();
+		Parnilogika::pl->history += "\n";
 		ParniScitacka::ui->Display->setText(QString::fromStdString(Parnilogika::pl->getDisplayOutput()));
 	}
 	catch (...) {
+		Parnilogika::pl->history += "Error\n";
 		ParniScitacka::ui->Display->setText("Error");
 		Parnilogika::pl->reset();
 	}
