@@ -14,9 +14,9 @@ all:
 	@printf "\033[32mProjekt build successful (in $(BUILD_DIR))\033[0m\n"
 
 
-# TODO
-pack: gui
-	@echo "Not implemented!"
+pack:
+	zip -r ../../ivs.zip ..
+	@echo "Archive created"
 
 # I hope this doesn't brick any machines...
 clean:
