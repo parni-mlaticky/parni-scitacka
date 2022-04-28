@@ -10,6 +10,7 @@
 #include <iostream>
 #include <QMessageBox>
 #include <QTextEdit>
+#include <QComboBox>
 
 ParniScitacka::ParniScitacka(QWidget *parent) : QMainWindow(parent), ui(new Ui::ParniScitacka) {
 	ui->setupUi(this);
@@ -216,7 +217,6 @@ void ParniScitacka::on_actionHistory_triggered()
 
 void ParniScitacka::on_actionPrecision_triggered()
 {
-
     QGridLayout *grid = new QGridLayout(this);
     if(precisionSelect == nullptr){
         QComboBox *comboBox = new QComboBox();
