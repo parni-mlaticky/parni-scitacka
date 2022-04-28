@@ -1,0 +1,4 @@
+xhavel46 100 (Profiling, instalator, uzivatelsky manual, vedeni)
+xhucov00 100 (implementace math-lib, testy, část gui-backend)
+xkolou05 100 (gui-frontend, část gui-backend, mockup, headers)
+xzobal01 100 (část implementace math-lib, Qmake, část gui-backend)
