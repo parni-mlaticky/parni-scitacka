@@ -9,6 +9,7 @@
 #include "parnilogika.h"
 #include <iostream>
 #include <QMessageBox>
+#include <QTextEdit>
 
 ParniScitacka::ParniScitacka(QWidget *parent) : QMainWindow(parent), ui(new Ui::ParniScitacka) {
 	ui->setupUi(this);
@@ -203,7 +204,12 @@ void ParniScitacka::on_ButtonPI_clicked()
 
 void ParniScitacka::on_actionHistory_triggered()
 {
-    QMessageBox::information(this, "History", "TODO");
+    std::string history = Parnilogika::pl->history;
+
+     QTextEdit *historyWindow = new QTextEdit();
+      historyWindow->setText(QString:: fromStdString(history));
+        historyWindow->setReadOnly(true);
+      historyWindow->show();
 }
 
 void ParniScitacka::on_actionAbout_triggered()
