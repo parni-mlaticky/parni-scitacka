@@ -1,0 +1,7 @@
+Pomocí skriptu src/standard-deviation/make-test-files.py jsem vytvořil tři testovací soubory, a provedl nad nimi profiling pomocí valgrindu. Výstup jsem zpracoval pomocí gprof2dot.
+
+Při načtení 10 a 100 hodnot ze vstupu zabírají většinu času funkce z C a náš kód zabírá relativně malou část času celkového běhu programu.
+
+Při 1000 načtených vstupech už zabírá většinu času náš kód. Největší část z něj je prostě načítání a zpracování vstupu.
+
+V samotné matematické knihovně už je ale také vidět prostor na zlepšení - celkem velké množství času zabírá funkce sm::SteamMath::calcErrorCheck().
