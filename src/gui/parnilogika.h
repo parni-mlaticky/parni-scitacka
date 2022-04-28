@@ -58,11 +58,6 @@ class Parnilogika {
 	std::string history;
 
 	/**
-	* @brief The number of decimal points show on the display.
-	*/
-	int displayPrecision;
-
-	/**
 	* This class is ment to be used as a singleton, this is a static variable, where the refference to the primary instance will be stored.
 	* @brief This class is meant to be used as a singleton, this is a static variable, where the reference to the primary instance will be stored.
 	*/

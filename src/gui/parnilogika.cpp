@@ -17,7 +17,6 @@ using namespace sm;
 Parnilogika *Parnilogika::pl = nullptr;
 
 Parnilogika::Parnilogika() {
-	displayPrecision = 5;
 	std::setlocale(LC_NUMERIC,"C");
 	Parnilogika::reset();
 }
@@ -261,7 +260,7 @@ std::string Parnilogika::getDisplayOutput() {
 	std::setlocale(LC_NUMERIC,"C");
 	std::string s;
 	std::ostringstream out;
-	out.precision(displayPrecision);
+	out.precision(PRECISION);
 
 	switch (operation) {
 		case UNDEF:
