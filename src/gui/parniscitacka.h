@@ -183,6 +183,8 @@ private slots:
 	 */
     void on_ComboBox_index_changed(int value);
 
+    void on_actionnHelp_triggered();
+
 protected:
 	/**
 	 * @brief This function is called whenever a keyboard button is pressed and enables the user to control the app
