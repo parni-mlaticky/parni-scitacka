@@ -158,7 +158,7 @@ void Parnilogika::processResult() {
 			doubleToCollector(SteamMath::tan(collectorToDouble()));
 			break;
 		case COTAN:
-			doubleToCollector(SteamMath::tan(collectorToDouble()));
+			doubleToCollector(SteamMath::cotan(collectorToDouble()));
 			break;
 	}
 	ans = collectorToDouble();
