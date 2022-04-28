@@ -1,0 +1,28 @@
+UTF-8 encoded file
+
+Hlavní termíny:
+ - deadline TDD knihovny  - 2022-04-10 - actual 2022-04-28
+ - deadline GUI           - 2022-04-24 - actual 2022-04-28
+ - deadline installer+etc - 2022-04-26 - actual 2022-04-28
+ - deadline user docs     - 2022-04-27 - actual 2022-04-28
+ - deadline mockup        - 2022-04-28 - actual 2022-04-28
+
+General úkoly:
+ - .editorconfig                                 - provede xzobal01 - zkontroluje xkolou05 - target 2022-03-21 - actual 2022-03-21
+ - základní adresářová stuktura repozitáře       - provede xzobal01 - zkontroluje xkolou05 - target 2022-03-21 - actual 2022-03-20
+ - Setup Doxygenu                                -    vede xhavel46 - zkontroluje xhucov00 - target 2022-03-21 - actual 2022-03-25
+ - Setup Makefile                                - provede xzobal01 - zkontroluje xkolou05 - target 2022-03-28 - actual 2022-03-25
+ 
+ - MathLib headers + specifikace fcí             - provede xkolou05 - zkontroluje xzobal01 - target 2022-03-28 - actual 2022-04-05
+ - Definice testů pro TDD math knihovny          - provede xhucov00 - zkontroluje xkolou05 - target 2022-03-31 - actual 2022-04-12
+ - Develoment math lib (+-*/) (factorial)        - provede xzobal01 - zkontroluje xhucov00 - target 2022-04-09 - actual 2022-04-23
+ - Výroba debugging screenshotu                  - provede xzobal01 - zkontroluje xkolou05 - target 2022-04-09 - actual 2022-04-26
+ - Develoment math lib (mocniny, odmocniny)      - provede xhucov00 - zkontroluje xzobal01 - target 2022-04-09 - actual 2022-04-27
+ - Profiling                                     - provede xhavel46 - zkontroluje xkolou05 - target 2022-04-16 - actual 2022-04-28
+ 
+ - GUI                                           -    vede xkolou05 - zkontroluje xhavel46 - target 2022-04-24 - actual 2022-04-28
+ 
+ - Kontrola vygenerované programátorské příručky                    - zkontroluje xhavel46 - target 2022-04-25 - actual 2022-04-28
+ - Příprava instalace u guesta                   - provede xhavel46 - zkontroluje xzobal01 - target 2022-04-26 - actual 2022-04-28
+ - Uživatelská příručka (LaTeX)                  - provede xhavel46 - zkontroluje xhucov00 - target 2022-04-27 - actual 2022-04-28
+ - Mockup další expanze uživatelského rozhraní   -    vede xkolou05 - zkontroluje *        - target 2022-04-28 - actual 2022-04-28
