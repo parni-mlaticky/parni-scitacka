@@ -133,8 +133,14 @@ void ParniScitacka::on_ButtonRoot_clicked()
 
 void ParniScitacka::on_ButtonEqual_clicked()
 {
-    Parnilogika::pl->processResult();
-    ParniScitacka::ui->Display->setText(QString::fromStdString(Parnilogika::pl->getDisplayOutput()));
+	try {
+		Parnilogika::pl->processResult();
+		ParniScitacka::ui->Display->setText(QString::fromStdString(Parnilogika::pl->getDisplayOutput()));
+	}
+	catch (...) {
+		ParniScitacka::ui->Display->setText("Error");
+		Parnilogika::pl->reset();
+	}
 }
 
 void ParniScitacka::on_ButtonSin_clicked()
