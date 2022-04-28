@@ -30,7 +30,7 @@ using namespace sm;
 
 /**
  * @brief Method to calculate standard deviation of a sample
- * @param *data Pointer to input data
+ * @param data Pointer to input data
  * @param n Number of elements in input data
  * @return double Standard deviation of input data
  * @bug does not work for numbers with a decimal dash instead of a point todo fix
