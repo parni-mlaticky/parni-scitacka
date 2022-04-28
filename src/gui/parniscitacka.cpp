@@ -10,10 +10,10 @@
 #include <iostream>
 #include <QMessageBox>
 #include <QTextEdit>
-#include <QComboBox>
 
 ParniScitacka::ParniScitacka(QWidget *parent) : QMainWindow(parent), ui(new Ui::ParniScitacka) {
 	ui->setupUi(this);
+    precisionSelect = nullptr;
 }
 
 ParniScitacka::~ParniScitacka() {
@@ -216,19 +216,25 @@ void ParniScitacka::on_actionHistory_triggered()
 
 void ParniScitacka::on_actionPrecision_triggered()
 {
-    QGridLayout *grid = new QGridLayout(this);
-    QComboBox *comboBox = new QComboBox();
-    comboBox->addItem("5");
-    comboBox->addItem("10");
-    comboBox->addItem("14");
-    comboBox->setFixedHeight(50);
-    comboBox->setFixedWidth(200);
-    comboBox->setWindowTitle("Nastavení přesnosti");
-    grid->addWidget(comboBox);
-    //current value
-    //comboBox->itemData(comboBox->currentIndex());
-    comboBox->show();
 
+    QGridLayout *grid = new QGridLayout(this);
+    if(precisionSelect == nullptr){
+        QComboBox *comboBox = new QComboBox();
+        comboBox->addItem("5");
+        comboBox->addItem("10");
+        comboBox->addItem("14");
+        comboBox->setFixedHeight(50);
+        comboBox->setFixedWidth(200);
+        comboBox->setWindowTitle("Nastavení přesnosti");
+        grid->addWidget(comboBox);
+        comboBox->show();
+        precisionSelect = comboBox;
+        connect(precisionSelect, SIGNAL(currentIndexChanged(int)), this, SLOT(on_ComboBox_index_changed(int)));
+    }
+    else{
+        grid->addWidget(precisionSelect);
+        precisionSelect->show();
+    }
 }
 
 void ParniScitacka::on_actionAbout_triggered()
@@ -241,6 +247,21 @@ void ParniScitacka::on_ButtonSwitch_clicked()
     Parnilogika::pl->invertCollector();
     ParniScitacka::ui->Display->setText(QString::fromStdString(Parnilogika::pl->getDisplayOutput()));
 }
+
+void ParniScitacka::on_ComboBox_index_changed(int value){
+    printf("%d\n", value);
+    if(value == 0){
+        Parnilogika::pl->displayPrecision = 5;
+    }
+    if(value == 1){
+        Parnilogika::pl->displayPrecision = 10;
+    }
+    if(value == 2){
+        Parnilogika::pl->displayPrecision = 14;
+    }
+    return;
+}
+
 
 void ParniScitacka::on_ButtonBackspace_clicked()
 {
