@@ -68,3 +68,6 @@ cd steammath
 
 ## License
 This project is available under the GNU GPL v3. You should have recived a copy of the license in the "LICENSE" file.
+
+## Environment
+Ubuntu 64bit
