@@ -26,8 +26,8 @@
    <string>Parní Sčítačka</string>
   </property>
   <property name="windowIcon">
-   <iconset theme="kcalc">
-    <normaloff>.</normaloff>.</iconset>
+   <iconset resource="resource.qrc">
+    <normaloff>:/files/parni-scitacka.svg</normaloff>:/files/parni-scitacka.svg</iconset>
   </property>
   <property name="windowOpacity">
    <double>1.000000000000000</double>
@@ -1848,6 +1848,8 @@ QPushButton:pressed {
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
  <connections/>
 </ui>
