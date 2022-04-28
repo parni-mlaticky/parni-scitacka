@@ -26,3 +26,5 @@ LIBS += -L"$$OUT_PWD/../steammath" -lsteammath
 
 
 include(files.pri)
+RESOURCES += \
+    resource.qrc
