@@ -67,8 +67,8 @@ QMenu::item:selected {
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_3" rowstretch="0,0,0,0,0,0,0" columnstretch="0,0,0,0,0,0,0,0">
-    <item row="4" column="5">
-     <widget class="QPushButton" name="ButtonQRoot">
+    <item row="3" column="0">
+     <widget class="QPushButton" name="Button7">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
         <horstretch>0</horstretch>
@@ -84,7 +84,7 @@ QMenu::item:selected {
       <property name="font">
        <font>
         <family>Roboto Black</family>
-        <pointsize>12</pointsize>
+        <pointsize>16</pointsize>
         <bold>true</bold>
        </font>
       </property>
@@ -92,7 +92,7 @@ QMenu::item:selected {
        <string notr="true">QPushButton {
 	color: rgb(255, 255, 255);
 	background-color: rgb(1, 159, 194);
-	border-radius: 10px;
+	border-radius: 20px;
 	padding: 5px;
 	border-style: outset;
 }
@@ -100,7 +100,7 @@ QMenu::item:selected {
 QPushButton:hover {
 	color: rgb(255, 255, 255);
 	background-color: rgb(1, 182, 218);
-	border-radius: 10px;
+	border-radius: 20px;
 	padding: 5px;
 	border-style: outset;
 }
@@ -108,13 +108,13 @@ QPushButton:hover {
 QPushButton:pressed {
 	color: rgb(255, 255, 255);
 	background-color: rgb(1, 124, 149);
-	border-radius: 10px;
+	border-radius: 20px;
 	padding: 5px;
 	border-style: outset;
 }</string>
       </property>
       <property name="text">
-       <string>root</string>
+       <string>7</string>
       </property>
      </widget>
     </item>
@@ -169,51 +169,8 @@ QPushButton:pressed {
       </property>
      </widget>
     </item>
-    <item row="0" column="0" colspan="8">
-     <widget class="QLineEdit" name="Display">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>200</width>
-        <height>95</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>1000</width>
-        <height>190</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>20</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QLineEdit {
-	color: rgb(0, 0, 0);
-	background-color: rgb(255, 255, 255);
-	border-radius: 25%;
-}</string>
-      </property>
-      <property name="text">
-       <string>0</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="2">
-     <widget class="QPushButton" name="Button6">
+    <item row="5" column="2">
+     <widget class="QPushButton" name="Button3">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
         <horstretch>0</horstretch>
@@ -259,211 +216,7 @@ QPushButton:pressed {
 }</string>
       </property>
       <property name="text">
-       <string>6</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="4">
-     <widget class="QPushButton" name="ButtonSin">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>40</width>
-        <height>40</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Roboto Black</family>
-        <pointsize>12</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	color: rgb(255, 255, 255);
-	background-color: rgb(1, 159, 194);
-	border-radius: 10px;
-	padding: 5px;
-	border-style: outset;
-}
-
-QPushButton:hover {
-	color: rgb(255, 255, 255);
-	background-color: rgb(1, 182, 218);
-	border-radius: 10px;
-	padding: 5px;
-	border-style: outset;
-}
-
-QPushButton:pressed {
-	color: rgb(255, 255, 255);
-	background-color: rgb(1, 124, 149);
-	border-radius: 10px;
-	padding: 5px;
-	border-style: outset;
-}</string>
-      </property>
-      <property name="text">
-       <string>sin</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="5">
-     <widget class="QPushButton" name="ButtonCos">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>40</width>
-        <height>40</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Roboto Black</family>
-        <pointsize>12</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	color: rgb(255, 255, 255);
-	background-color: rgb(1, 159, 194);
-	border-radius: 10px;
-	padding: 5px;
-	border-style: outset;
-}
-
-QPushButton:hover {
-	color: rgb(255, 255, 255);
-	background-color: rgb(1, 182, 218);
-	border-radius: 10px;
-	padding: 5px;
-	border-style: outset;
-}
-
-QPushButton:pressed {
-	color: rgb(255, 255, 255);
-	background-color: rgb(1, 124, 149);
-	border-radius: 10px;
-	padding: 5px;
-	border-style: outset;
-}</string>
-      </property>
-      <property name="text">
-       <string>cos</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="6">
-     <widget class="QPushButton" name="ButtonTan">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>40</width>
-        <height>40</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Roboto Black</family>
-        <pointsize>12</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	color: rgb(255, 255, 255);
-	background-color: rgb(1, 159, 194);
-	border-radius: 10px;
-	padding: 5px;
-	border-style: outset;
-}
-
-QPushButton:hover {
-	color: rgb(255, 255, 255);
-	background-color: rgb(1, 182, 218);
-	border-radius: 10px;
-	padding: 5px;
-	border-style: outset;
-}
-
-QPushButton:pressed {
-	color: rgb(255, 255, 255);
-	background-color: rgb(1, 124, 149);
-	border-radius: 10px;
-	padding: 5px;
-	border-style: outset;
-}</string>
-      </property>
-      <property name="text">
-       <string>tan</string>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="0" colspan="2">
-     <widget class="QPushButton" name="Button0">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>40</width>
-        <height>40</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Roboto Black</family>
-        <pointsize>16</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	color: rgb(255, 255, 255);
-	background-color: rgb(1, 159, 194);
-	border-radius: 20px;
-	padding: 5px;
-	border-style: outset;
-}
-
-QPushButton:hover {
-	color: rgb(255, 255, 255);
-	background-color: rgb(1, 182, 218);
-	border-radius: 20px;
-	padding: 5px;
-	border-style: outset;
-}
-
-QPushButton:pressed {
-	color: rgb(255, 255, 255);
-	background-color: rgb(1, 124, 149);
-	border-radius: 20px;
-	padding: 5px;
-	border-style: outset;
-}</string>
-      </property>
-      <property name="text">
-       <string>0</string>
+       <string>3</string>
       </property>
      </widget>
     </item>
@@ -569,149 +322,8 @@ QPushButton:pressed {
       </property>
      </widget>
     </item>
-    <item row="4" column="6" colspan="2">
-     <widget class="QPushButton" name="ButtonAns">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>40</width>
-        <height>40</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Roboto Black</family>
-        <pointsize>12</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	color: rgb(255, 255, 255);
-	background-color: rgb(1, 159, 194);
-	border-radius: 10px;
-	padding: 5px;
-	border-style: outset;
-}
-
-QPushButton:hover {
-	color: rgb(255, 255, 255);
-	background-color: rgb(1, 182, 218);
-	border-radius: 10px;
-	padding: 5px;
-	border-style: outset;
-}
-
-QPushButton:pressed {
-	color: rgb(255, 255, 255);
-	background-color: rgb(1, 124, 149);
-	border-radius: 10px;
-	padding: 5px;
-	border-style: outset;
-}</string>
-      </property>
-      <property name="text">
-       <string>ANS</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="5">
-     <widget class="QPushButton" name="ButtonRoot">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="font">
-       <font>
-        <family>Roboto Black</family>
-        <pointsize>12</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	color: rgb(255, 255, 255);
-	background-color: rgb(1, 159, 194);
-	border-radius: 10px;
-	padding: 5px;
-	border-style: outset;
-}
-
-QPushButton:hover {
-	color: rgb(255, 255, 255);
-	background-color: rgb(1, 182, 218);
-	border-radius: 10px;
-	padding: 5px;
-	border-style: outset;
-}
-
-QPushButton:pressed {
-	color: rgb(255, 255, 255);
-	background-color: rgb(1, 124, 149);
-	border-radius: 10px;
-	padding: 5px;
-	border-style: outset;
-}</string>
-      </property>
-      <property name="text">
-       <string>n√x</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="3">
-     <widget class="QPushButton" name="ButtonDivide">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="font">
-       <font>
-        <family>Roboto Black</family>
-        <pointsize>16</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	color: rgb(255, 255, 255);
-	background-color: rgb(1, 159, 194);
-	border-radius: 20px;
-	padding: 5px;
-	border-style: outset;
-}
-
-QPushButton:hover {
-	color: rgb(255, 255, 255);
-	background-color: rgb(1, 182, 218);
-	border-radius: 20px;
-	padding: 5px;
-	border-style: outset;
-}
-
-QPushButton:pressed {
-	color: rgb(255, 255, 255);
-	background-color: rgb(1, 124, 149);
-	border-radius: 20px;
-	padding: 5px;
-	border-style: outset;
-}</string>
-      </property>
-      <property name="text">
-       <string>/</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="0">
-     <widget class="QPushButton" name="Button4">
+    <item row="6" column="0" colspan="2">
+     <widget class="QPushButton" name="Button0">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
         <horstretch>0</horstretch>
@@ -757,7 +369,58 @@ QPushButton:pressed {
 }</string>
       </property>
       <property name="text">
-       <string>4</string>
+       <string>0</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="4">
+     <widget class="QPushButton" name="ButtonSin">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>40</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Roboto Black</family>
+        <pointsize>12</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	color: rgb(255, 255, 255);
+	background-color: rgb(1, 159, 194);
+	border-radius: 10px;
+	padding: 5px;
+	border-style: outset;
+}
+
+QPushButton:hover {
+	color: rgb(255, 255, 255);
+	background-color: rgb(1, 182, 218);
+	border-radius: 10px;
+	padding: 5px;
+	border-style: outset;
+}
+
+QPushButton:pressed {
+	color: rgb(255, 255, 255);
+	background-color: rgb(1, 124, 149);
+	border-radius: 10px;
+	padding: 5px;
+	border-style: outset;
+}</string>
+      </property>
+      <property name="text">
+       <string>sin</string>
       </property>
      </widget>
     </item>
@@ -812,19 +475,58 @@ QPushButton:pressed {
       </property>
      </widget>
     </item>
-    <item row="4" column="4">
-     <widget class="QPushButton" name="ButtonCotan">
+    <item row="1" column="1">
+     <widget class="QPushButton" name="ButtonSwitch">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
-      <property name="minimumSize">
-       <size>
-        <width>40</width>
-        <height>40</height>
-       </size>
+      <property name="font">
+       <font>
+        <family>Roboto Black</family>
+        <pointsize>16</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	color: rgb(255, 255, 255);
+	background-color: rgb(1, 159, 194);
+	border-radius: 10px;
+	padding: 5px;
+	border-style: outset;
+}
+
+QPushButton:hover {
+	color: rgb(255, 255, 255);
+	background-color: rgb(1, 182, 218);
+	border-radius: 10px;
+	padding: 5px;
+	border-style: outset;
+}
+
+QPushButton:pressed {
+	color: rgb(255, 255, 255);
+	background-color: rgb(1, 124, 149);
+	border-radius: 10px;
+	padding: 5px;
+	border-style: outset;
+}</string>
+      </property>
+      <property name="text">
+       <string>+/-</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="5">
+     <widget class="QPushButton" name="ButtonRoot">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
       </property>
       <property name="font">
        <font>
@@ -859,12 +561,12 @@ QPushButton:pressed {
 }</string>
       </property>
       <property name="text">
-       <string>cotan</string>
+       <string>n√x</string>
       </property>
      </widget>
     </item>
-    <item row="5" column="1">
-     <widget class="QPushButton" name="Button2">
+    <item row="4" column="2">
+     <widget class="QPushButton" name="Button6">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
         <horstretch>0</horstretch>
@@ -910,7 +612,95 @@ QPushButton:pressed {
 }</string>
       </property>
       <property name="text">
-       <string>2</string>
+       <string>6</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="6">
+     <widget class="QPushButton" name="ButtonFact">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Roboto Black</family>
+        <pointsize>12</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	color: rgb(255, 255, 255);
+	background-color: rgb(1, 159, 194);
+	border-radius: 10px;
+	padding: 5px;
+	border-style: outset;
+}
+
+QPushButton:hover {
+	color: rgb(255, 255, 255);
+	background-color: rgb(1, 182, 218);
+	border-radius: 10px;
+	padding: 5px;
+	border-style: outset;
+}
+
+QPushButton:pressed {
+	color: rgb(255, 255, 255);
+	background-color: rgb(1, 124, 149);
+	border-radius: 10px;
+	padding: 5px;
+	border-style: outset;
+}</string>
+      </property>
+      <property name="text">
+       <string>x!</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0" colspan="8">
+     <widget class="QLineEdit" name="Display">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>200</width>
+        <height>95</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>1000</width>
+        <height>190</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+	color: rgb(0, 0, 0);
+	background-color: rgb(255, 255, 255);
+	border-radius: 25%;
+}</string>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
       </property>
      </widget>
     </item>
@@ -965,8 +755,8 @@ QPushButton:pressed {
       </property>
      </widget>
     </item>
-    <item row="3" column="1">
-     <widget class="QPushButton" name="Button8">
+    <item row="3" column="5">
+     <widget class="QPushButton" name="ButtonCos">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
         <horstretch>0</horstretch>
@@ -982,7 +772,7 @@ QPushButton:pressed {
       <property name="font">
        <font>
         <family>Roboto Black</family>
-        <pointsize>16</pointsize>
+        <pointsize>12</pointsize>
         <bold>true</bold>
        </font>
       </property>
@@ -990,7 +780,7 @@ QPushButton:pressed {
        <string notr="true">QPushButton {
 	color: rgb(255, 255, 255);
 	background-color: rgb(1, 159, 194);
-	border-radius: 20px;
+	border-radius: 10px;
 	padding: 5px;
 	border-style: outset;
 }
@@ -998,7 +788,7 @@ QPushButton:pressed {
 QPushButton:hover {
 	color: rgb(255, 255, 255);
 	background-color: rgb(1, 182, 218);
-	border-radius: 20px;
+	border-radius: 10px;
 	padding: 5px;
 	border-style: outset;
 }
@@ -1006,13 +796,13 @@ QPushButton:hover {
 QPushButton:pressed {
 	color: rgb(255, 255, 255);
 	background-color: rgb(1, 124, 149);
-	border-radius: 20px;
+	border-radius: 10px;
 	padding: 5px;
 	border-style: outset;
 }</string>
       </property>
       <property name="text">
-       <string>8</string>
+       <string>cos</string>
       </property>
      </widget>
     </item>
@@ -1058,6 +848,51 @@ QPushButton:pressed {
       </property>
       <property name="text">
        <string>x^y</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="3">
+     <widget class="QPushButton" name="ButtonDivide">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Roboto Black</family>
+        <pointsize>16</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	color: rgb(255, 255, 255);
+	background-color: rgb(1, 159, 194);
+	border-radius: 20px;
+	padding: 5px;
+	border-style: outset;
+}
+
+QPushButton:hover {
+	color: rgb(255, 255, 255);
+	background-color: rgb(1, 182, 218);
+	border-radius: 20px;
+	padding: 5px;
+	border-style: outset;
+}
+
+QPushButton:pressed {
+	color: rgb(255, 255, 255);
+	background-color: rgb(1, 124, 149);
+	border-radius: 20px;
+	padding: 5px;
+	border-style: outset;
+}</string>
+      </property>
+      <property name="text">
+       <string>/</string>
       </property>
      </widget>
     </item>
@@ -1112,98 +947,8 @@ QPushButton:pressed {
       </property>
      </widget>
     </item>
-    <item row="1" column="2">
-     <widget class="QPushButton" name="ButtonBackspace">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="font">
-       <font>
-        <family>Roboto Black</family>
-        <pointsize>16</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	color: rgb(255, 255, 255);
-	background-color: rgb(1, 159, 194);
-	border-radius: 10px;
-	padding: 5px;
-	border-style: outset;
-}
-
-QPushButton:hover {
-	color: rgb(255, 255, 255);
-	background-color: rgb(1, 182, 218);
-	border-radius: 10px;
-	padding: 5px;
-	border-style: outset;
-}
-
-QPushButton:pressed {
-	color: rgb(255, 255, 255);
-	background-color: rgb(1, 124, 149);
-	border-radius: 10px;
-	padding: 5px;
-	border-style: outset;
-}</string>
-      </property>
-      <property name="text">
-       <string>⇐</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <widget class="QPushButton" name="ButtonSwitch">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="font">
-       <font>
-        <family>Roboto Black</family>
-        <pointsize>16</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	color: rgb(255, 255, 255);
-	background-color: rgb(1, 159, 194);
-	border-radius: 10px;
-	padding: 5px;
-	border-style: outset;
-}
-
-QPushButton:hover {
-	color: rgb(255, 255, 255);
-	background-color: rgb(1, 182, 218);
-	border-radius: 10px;
-	padding: 5px;
-	border-style: outset;
-}
-
-QPushButton:pressed {
-	color: rgb(255, 255, 255);
-	background-color: rgb(1, 124, 149);
-	border-radius: 10px;
-	padding: 5px;
-	border-style: outset;
-}</string>
-      </property>
-      <property name="text">
-       <string>+/-</string>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="3">
-     <widget class="QPushButton" name="ButtonEqual">
+    <item row="3" column="6">
+     <widget class="QPushButton" name="ButtonCotan">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
         <horstretch>0</horstretch>
@@ -1215,102 +960,6 @@ QPushButton:pressed {
         <width>40</width>
         <height>40</height>
        </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Roboto Black</family>
-        <pointsize>16</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	color: rgb(255, 255, 255);
-	background-color: rgb(1, 159, 194);
-	border-radius: 20px;
-	padding: 5px;
-	border-style: outset;
-}
-
-QPushButton:hover {
-	color: rgb(255, 255, 255);
-	background-color: rgb(1, 182, 218);
-	border-radius: 20px;
-	padding: 5px;
-	border-style: outset;
-}
-
-QPushButton:pressed {
-	color: rgb(255, 255, 255);
-	background-color: rgb(1, 124, 149);
-	border-radius: 20px;
-	padding: 5px;
-	border-style: outset;
-}</string>
-      </property>
-      <property name="text">
-       <string>=</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="0">
-     <widget class="QPushButton" name="ButtonReset">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>40</width>
-        <height>40</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Roboto Black</family>
-        <pointsize>16</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	color: rgb(255, 255, 255);
-	background-color: rgb(1, 159, 194);
-	border-radius: 10px;
-	padding: 5px;
-	border-style: outset;
-}
-
-QPushButton:hover {
-	color: rgb(255, 255, 255);
-	background-color: rgb(1, 182, 218);
-	border-radius: 10px;
-	padding: 5px;
-	border-style: outset;
-}
-
-QPushButton:pressed {
-	color: rgb(255, 255, 255);
-	background-color: rgb(1, 124, 149);
-	border-radius: 10px;
-	padding: 5px;
-	border-style: outset;
-}</string>
-      </property>
-      <property name="text">
-       <string>C</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="7">
-     <widget class="QPushButton" name="ButtonPI">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
       </property>
       <property name="font">
        <font>
@@ -1323,7 +972,7 @@ QPushButton:pressed {
        <string notr="true">QPushButton {
 	color: rgb(255, 255, 255);
 	background-color: rgb(1, 159, 194);
-	border-radius: 20px;
+	border-radius: 10px;
 	padding: 5px;
 	border-style: outset;
 }
@@ -1331,7 +980,7 @@ QPushButton:pressed {
 QPushButton:hover {
 	color: rgb(255, 255, 255);
 	background-color: rgb(1, 182, 218);
-	border-radius: 20px;
+	border-radius: 10px;
 	padding: 5px;
 	border-style: outset;
 }
@@ -1339,115 +988,13 @@ QPushButton:hover {
 QPushButton:pressed {
 	color: rgb(255, 255, 255);
 	background-color: rgb(1, 124, 149);
-	border-radius: 20px;
+	border-radius: 10px;
 	padding: 5px;
 	border-style: outset;
 }</string>
       </property>
       <property name="text">
-       <string>π</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="2">
-     <widget class="QPushButton" name="Button3">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>40</width>
-        <height>40</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Roboto Black</family>
-        <pointsize>16</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	color: rgb(255, 255, 255);
-	background-color: rgb(1, 159, 194);
-	border-radius: 20px;
-	padding: 5px;
-	border-style: outset;
-}
-
-QPushButton:hover {
-	color: rgb(255, 255, 255);
-	background-color: rgb(1, 182, 218);
-	border-radius: 20px;
-	padding: 5px;
-	border-style: outset;
-}
-
-QPushButton:pressed {
-	color: rgb(255, 255, 255);
-	background-color: rgb(1, 124, 149);
-	border-radius: 20px;
-	padding: 5px;
-	border-style: outset;
-}</string>
-      </property>
-      <property name="text">
-       <string>3</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="0">
-     <widget class="QPushButton" name="Button7">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>40</width>
-        <height>40</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Roboto Black</family>
-        <pointsize>16</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	color: rgb(255, 255, 255);
-	background-color: rgb(1, 159, 194);
-	border-radius: 20px;
-	padding: 5px;
-	border-style: outset;
-}
-
-QPushButton:hover {
-	color: rgb(255, 255, 255);
-	background-color: rgb(1, 182, 218);
-	border-radius: 20px;
-	padding: 5px;
-	border-style: outset;
-}
-
-QPushButton:pressed {
-	color: rgb(255, 255, 255);
-	background-color: rgb(1, 124, 149);
-	border-radius: 20px;
-	padding: 5px;
-	border-style: outset;
-}</string>
-      </property>
-      <property name="text">
-       <string>7</string>
+       <string>cotan</string>
       </property>
      </widget>
     </item>
@@ -1502,7 +1049,409 @@ QPushButton:pressed {
       </property>
      </widget>
     </item>
+    <item row="5" column="1">
+     <widget class="QPushButton" name="Button2">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>40</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Roboto Black</family>
+        <pointsize>16</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	color: rgb(255, 255, 255);
+	background-color: rgb(1, 159, 194);
+	border-radius: 20px;
+	padding: 5px;
+	border-style: outset;
+}
+
+QPushButton:hover {
+	color: rgb(255, 255, 255);
+	background-color: rgb(1, 182, 218);
+	border-radius: 20px;
+	padding: 5px;
+	border-style: outset;
+}
+
+QPushButton:pressed {
+	color: rgb(255, 255, 255);
+	background-color: rgb(1, 124, 149);
+	border-radius: 20px;
+	padding: 5px;
+	border-style: outset;
+}</string>
+      </property>
+      <property name="text">
+       <string>2</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QPushButton" name="Button4">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>40</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Roboto Black</family>
+        <pointsize>16</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	color: rgb(255, 255, 255);
+	background-color: rgb(1, 159, 194);
+	border-radius: 20px;
+	padding: 5px;
+	border-style: outset;
+}
+
+QPushButton:hover {
+	color: rgb(255, 255, 255);
+	background-color: rgb(1, 182, 218);
+	border-radius: 20px;
+	padding: 5px;
+	border-style: outset;
+}
+
+QPushButton:pressed {
+	color: rgb(255, 255, 255);
+	background-color: rgb(1, 124, 149);
+	border-radius: 20px;
+	padding: 5px;
+	border-style: outset;
+}</string>
+      </property>
+      <property name="text">
+       <string>4</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QPushButton" name="ButtonReset">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>40</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Roboto Black</family>
+        <pointsize>16</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	color: rgb(255, 255, 255);
+	background-color: rgb(1, 159, 194);
+	border-radius: 10px;
+	padding: 5px;
+	border-style: outset;
+}
+
+QPushButton:hover {
+	color: rgb(255, 255, 255);
+	background-color: rgb(1, 182, 218);
+	border-radius: 10px;
+	padding: 5px;
+	border-style: outset;
+}
+
+QPushButton:pressed {
+	color: rgb(255, 255, 255);
+	background-color: rgb(1, 124, 149);
+	border-radius: 10px;
+	padding: 5px;
+	border-style: outset;
+}</string>
+      </property>
+      <property name="text">
+       <string>C</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="QPushButton" name="ButtonBackspace">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Roboto Black</family>
+        <pointsize>16</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	color: rgb(255, 255, 255);
+	background-color: rgb(1, 159, 194);
+	border-radius: 10px;
+	padding: 5px;
+	border-style: outset;
+}
+
+QPushButton:hover {
+	color: rgb(255, 255, 255);
+	background-color: rgb(1, 182, 218);
+	border-radius: 10px;
+	padding: 5px;
+	border-style: outset;
+}
+
+QPushButton:pressed {
+	color: rgb(255, 255, 255);
+	background-color: rgb(1, 124, 149);
+	border-radius: 10px;
+	padding: 5px;
+	border-style: outset;
+}</string>
+      </property>
+      <property name="text">
+       <string>⇐</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QPushButton" name="Button8">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>40</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Roboto Black</family>
+        <pointsize>16</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	color: rgb(255, 255, 255);
+	background-color: rgb(1, 159, 194);
+	border-radius: 20px;
+	padding: 5px;
+	border-style: outset;
+}
+
+QPushButton:hover {
+	color: rgb(255, 255, 255);
+	background-color: rgb(1, 182, 218);
+	border-radius: 20px;
+	padding: 5px;
+	border-style: outset;
+}
+
+QPushButton:pressed {
+	color: rgb(255, 255, 255);
+	background-color: rgb(1, 124, 149);
+	border-radius: 20px;
+	padding: 5px;
+	border-style: outset;
+}</string>
+      </property>
+      <property name="text">
+       <string>8</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="3">
+     <widget class="QPushButton" name="ButtonEqual">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>40</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Roboto Black</family>
+        <pointsize>16</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	color: rgb(255, 255, 255);
+	background-color: rgb(1, 159, 194);
+	border-radius: 20px;
+	padding: 5px;
+	border-style: outset;
+}
+
+QPushButton:hover {
+	color: rgb(255, 255, 255);
+	background-color: rgb(1, 182, 218);
+	border-radius: 20px;
+	padding: 5px;
+	border-style: outset;
+}
+
+QPushButton:pressed {
+	color: rgb(255, 255, 255);
+	background-color: rgb(1, 124, 149);
+	border-radius: 20px;
+	padding: 5px;
+	border-style: outset;
+}</string>
+      </property>
+      <property name="text">
+       <string>=</string>
+      </property>
+     </widget>
+    </item>
     <item row="3" column="7">
+     <widget class="QPushButton" name="ButtonTan">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>40</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Roboto Black</family>
+        <pointsize>12</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	color: rgb(255, 255, 255);
+	background-color: rgb(1, 159, 194);
+	border-radius: 10px;
+	padding: 5px;
+	border-style: outset;
+}
+
+QPushButton:hover {
+	color: rgb(255, 255, 255);
+	background-color: rgb(1, 182, 218);
+	border-radius: 10px;
+	padding: 5px;
+	border-style: outset;
+}
+
+QPushButton:pressed {
+	color: rgb(255, 255, 255);
+	background-color: rgb(1, 124, 149);
+	border-radius: 10px;
+	padding: 5px;
+	border-style: outset;
+}</string>
+      </property>
+      <property name="text">
+       <string>tan</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="7">
+     <widget class="QPushButton" name="ButtonAns">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>40</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Roboto Black</family>
+        <pointsize>12</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	color: rgb(255, 255, 255);
+	background-color: rgb(1, 159, 194);
+	border-radius: 10px;
+	padding: 5px;
+	border-style: outset;
+}
+
+QPushButton:hover {
+	color: rgb(255, 255, 255);
+	background-color: rgb(1, 182, 218);
+	border-radius: 10px;
+	padding: 5px;
+	border-style: outset;
+}
+
+QPushButton:pressed {
+	color: rgb(255, 255, 255);
+	background-color: rgb(1, 124, 149);
+	border-radius: 10px;
+	padding: 5px;
+	border-style: outset;
+}</string>
+      </property>
+      <property name="text">
+       <string>ANS</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="7">
      <widget class="QPushButton" name="ButtonEuler">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -1553,8 +1502,8 @@ QPushButton:pressed {
       </property>
      </widget>
     </item>
-    <item row="1" column="6">
-     <widget class="QPushButton" name="ButtonFact">
+    <item row="4" column="6">
+     <widget class="QPushButton" name="ButtonPI">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
         <horstretch>0</horstretch>
@@ -1572,7 +1521,7 @@ QPushButton:pressed {
        <string notr="true">QPushButton {
 	color: rgb(255, 255, 255);
 	background-color: rgb(1, 159, 194);
-	border-radius: 10px;
+	border-radius: 20px;
 	padding: 5px;
 	border-style: outset;
 }
@@ -1580,7 +1529,7 @@ QPushButton:pressed {
 QPushButton:hover {
 	color: rgb(255, 255, 255);
 	background-color: rgb(1, 182, 218);
-	border-radius: 10px;
+	border-radius: 20px;
 	padding: 5px;
 	border-style: outset;
 }
@@ -1588,13 +1537,13 @@ QPushButton:hover {
 QPushButton:pressed {
 	color: rgb(255, 255, 255);
 	background-color: rgb(1, 124, 149);
-	border-radius: 10px;
+	border-radius: 20px;
 	padding: 5px;
 	border-style: outset;
 }</string>
       </property>
       <property name="text">
-       <string>x!</string>
+       <string>π</string>
       </property>
      </widget>
     </item>
@@ -1617,8 +1566,8 @@ QPushButton:pressed {
      <rect>
       <x>345</x>
       <y>107</y>
-      <width>135</width>
-      <height>92</height>
+      <width>166</width>
+      <height>115</height>
      </rect>
     </property>
     <property name="minimumSize">
@@ -1834,6 +1783,7 @@ QPushButton:pressed {
     </property>
     <addaction name="actionHistory"/>
     <addaction name="actionAbout"/>
+    <addaction name="actionPrecision"/>
    </widget>
    <addaction name="menumenu"/>
   </widget>
@@ -1845,6 +1795,11 @@ QPushButton:pressed {
   <action name="actionAbout">
    <property name="text">
     <string>O kalkulačce</string>
+   </property>
+  </action>
+  <action name="actionPrecision">
+   <property name="text">
+    <string>Nastavení přesnosti</string>
    </property>
   </action>
  </widget>
