@@ -1,0 +1,8 @@
+[Desktop Entry]
+Categories=Qt;Accessories;
+Exec=parni-scitacka
+GenericName=Parní Sčítačka
+Icon=/usr/share/pixmaps/parni-scitacka.xpm
+Name=Parní Sčítačka
+Type=Application
+X-KDE-StartupNotify=false

@@ -1,0 +1,63 @@
+\documentclass[a4paper]{article}
+
+\usepackage[top=1.5cm,bottom=1.5cm,left=2.5cm,right=2.5cm]{geometry}
+\usepackage[czech]{babel}
+
+\title{\Huge Parní sčítačka\\\huge Uživatelská příručka}
+\author{\LARGE tým Parní mlátičky \\ Marek Havel \\ Ondřej Zobal\\ Vladimír Hucovič\\ Petr Kolouch}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+Vážený uživateli, děkujeme, že jste si zvolil právě náš produkt. Pro nejlepší možný zážitek při instalaci a používání naší kalkulačky prosím pozorně čtěte instrukce v tomto dokumentu.
+
+\section*{Instalace, odinstalace}
+
+\subsection*{Instalace pomocí před-sestaveného balíčku (doporučeno)}
+
+Stáhněte instalační balíček, a nainstalujte jej pomocí:
+
+\verb|sudo apt install parni-scitacka.deb|
+
+\subsection*{Manuální sestavení a instalace}
+
+Ve zkratce: instalace závislostí, vstoupení do složky src, sestavení, zkopírování binárky, přidání záznamu o aplikaci.
+
+\verb|sudo apt install git qtdeclarative5-dev qt5-qmake g++|
+
+\verb|cd (adresar-programu)/src|
+
+\verb|make|
+
+\verb|cp ../build/gui/gui /usr/bin/parni-scitacka|
+
+\verb|chmod a+x /usr/bin/parni-scitacka|
+
+\verb|cp meta/parni-scitacka.desktop ~/.local/share/applications|
+
+\verb|cp meta/parni-scitacka.xpm /usr/share/pixmaps/|
+
+\subsection*{Odinstalace předinstalovaného balíčku}
+
+Odinstalace je opravdu jednoduchá. Stačí spustit tento příkaz:
+
+\verb|sudo apt remove parni-scitacka|
+
+\subsection*{Manuální odinstalace}
+
+Odinstalace je v podstatě prostě smazání pár věcí z konkrétních složek:
+
+\verb|rm /usr/bin/parni-scitacka|
+
+\verb|rm ~/.local/share/applications/parni-scitacka.desktop|
+
+\verb|rm /usr/share/pixmaps/parni-scitacka.xpm|
+
+\pagebreak
+\section*{Jak používat Parní sčítačku}
+
+Používání
+
+\end{document}
