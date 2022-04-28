@@ -134,7 +134,7 @@ void ParniScitacka::on_ButtonRoot_clicked()
 
 void ParniScitacka::on_ButtonEqual_clicked()
 {
-	try {
+    try {
 		// Adding the the operands portion (1 + 1 =) to history.
 		Parnilogika::pl->history += Parnilogika::pl->getDisplayOutput();
 		Parnilogika::pl->history += " = ";
@@ -143,7 +143,7 @@ void ParniScitacka::on_ButtonEqual_clicked()
 
 		// Adding the result to the history.
 		Parnilogika::pl->history += Parnilogika::pl->getDisplayOutput();
-		Parnilogika::pl->history += "\n";
+        Parnilogika::pl->history += "\n";
 		ParniScitacka::ui->Display->setText(QString::fromStdString(Parnilogika::pl->getDisplayOutput()));
 	}
 	catch (...) {
@@ -205,16 +205,17 @@ void ParniScitacka::on_ButtonPI_clicked()
 void ParniScitacka::on_actionHistory_triggered()
 {
     std::string history = Parnilogika::pl->history;
-
      QTextEdit *historyWindow = new QTextEdit();
       historyWindow->setText(QString:: fromStdString(history));
-        historyWindow->setReadOnly(true);
+      historyWindow->setReadOnly(true);
+      historyWindow->setWindowTitle("Historie");
       historyWindow->show();
+
 }
 
 void ParniScitacka::on_actionAbout_triggered()
 {
-       QMessageBox::information(this, "About", ABOUT_MESSAGE);
+       QMessageBox::information(this, "O kalkulačce", ABOUT_MESSAGE);
 }
 
 void ParniScitacka::on_ButtonSwitch_clicked()
