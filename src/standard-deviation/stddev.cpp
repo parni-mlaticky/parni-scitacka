@@ -13,8 +13,6 @@
 // for testing I used ./stddev < test.txt which includes many kinds of pain, but not all
 
 /**
- * @package standard-deviation
- * @brief namespace of the standard-deviation app
  * @author Marek Havel
  * @date 2022-04-24
  * @version 1.0

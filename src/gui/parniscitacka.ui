@@ -86,6 +86,7 @@ QMenu::item:selected {
        <font>
         <family>Roboto Black</family>
         <pointsize>12</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -137,6 +138,7 @@ QPushButton:pressed {
        <font>
         <family>Roboto Black</family>
         <pointsize>16</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -231,6 +233,7 @@ QPushButton:pressed {
        <font>
         <family>Roboto Black</family>
         <pointsize>16</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -282,6 +285,7 @@ QPushButton:pressed {
        <font>
         <family>Roboto Black</family>
         <pointsize>12</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -333,6 +337,7 @@ QPushButton:pressed {
        <font>
         <family>Roboto Black</family>
         <pointsize>12</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -384,6 +389,7 @@ QPushButton:pressed {
        <font>
         <family>Roboto Black</family>
         <pointsize>12</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -435,6 +441,7 @@ QPushButton:pressed {
        <font>
         <family>Roboto Black</family>
         <pointsize>16</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -486,6 +493,7 @@ QPushButton:pressed {
        <font>
         <family>Roboto Black</family>
         <pointsize>16</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -537,6 +545,7 @@ QPushButton:pressed {
        <font>
         <family>Roboto Black</family>
         <pointsize>16</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -588,6 +597,7 @@ QPushButton:pressed {
        <font>
         <family>Roboto Black</family>
         <pointsize>12</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -622,7 +632,7 @@ QPushButton:pressed {
      </widget>
     </item>
     <item row="1" column="5">
-     <widget class="QPushButton" name="ButtonSqrt">
+     <widget class="QPushButton" name="ButtonRoot">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
         <horstretch>0</horstretch>
@@ -633,6 +643,7 @@ QPushButton:pressed {
        <font>
         <family>Roboto Black</family>
         <pointsize>12</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -678,6 +689,7 @@ QPushButton:pressed {
        <font>
         <family>Roboto Black</family>
         <pointsize>16</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -729,6 +741,7 @@ QPushButton:pressed {
        <font>
         <family>Roboto Black</family>
         <pointsize>16</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -780,6 +793,7 @@ QPushButton:pressed {
        <font>
         <family>Roboto Black</family>
         <pointsize>16</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -831,6 +845,7 @@ QPushButton:pressed {
        <font>
         <family>Roboto Black</family>
         <pointsize>12</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -882,6 +897,7 @@ QPushButton:pressed {
        <font>
         <family>Roboto Black</family>
         <pointsize>16</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -933,6 +949,7 @@ QPushButton:pressed {
        <font>
         <family>Roboto Black</family>
         <pointsize>16</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -984,6 +1001,7 @@ QPushButton:pressed {
        <font>
         <family>Roboto Black</family>
         <pointsize>16</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -1029,6 +1047,7 @@ QPushButton:pressed {
        <font>
         <family>Roboto Black</family>
         <pointsize>12</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -1080,6 +1099,7 @@ QPushButton:pressed {
        <font>
         <family>Roboto Black</family>
         <pointsize>16</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -1114,7 +1134,7 @@ QPushButton:pressed {
      </widget>
     </item>
     <item row="1" column="2">
-     <widget class="QPushButton" name="ButtonFunctions">
+     <widget class="QPushButton" name="ButtonBackspace">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
         <horstretch>0</horstretch>
@@ -1125,6 +1145,7 @@ QPushButton:pressed {
        <font>
         <family>Roboto Black</family>
         <pointsize>16</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -1170,6 +1191,7 @@ QPushButton:pressed {
        <font>
         <family>Roboto Black</family>
         <pointsize>16</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -1221,6 +1243,7 @@ QPushButton:pressed {
        <font>
         <family>Roboto Black</family>
         <pointsize>16</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -1272,6 +1295,7 @@ QPushButton:pressed {
        <font>
         <family>Roboto Black</family>
         <pointsize>16</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -1317,6 +1341,7 @@ QPushButton:pressed {
        <font>
         <family>Roboto Black</family>
         <pointsize>12</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -1368,6 +1393,7 @@ QPushButton:pressed {
        <font>
         <family>Roboto Black</family>
         <pointsize>16</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -1419,6 +1445,7 @@ QPushButton:pressed {
        <font>
         <family>Roboto Black</family>
         <pointsize>16</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -1470,6 +1497,7 @@ QPushButton:pressed {
        <font>
         <family>Roboto Black</family>
         <pointsize>16</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -1521,6 +1549,7 @@ QPushButton:pressed {
        <font>
         <family>Roboto Black</family>
         <pointsize>12</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -1566,6 +1595,7 @@ QPushButton:pressed {
        <font>
         <family>Roboto Black</family>
         <pointsize>12</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -1607,7 +1637,7 @@ QPushButton:pressed {
      <x>0</x>
      <y>0</y>
      <width>500</width>
-     <height>21</height>
+     <height>20</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -1617,8 +1647,8 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>345</x>
-      <y>98</y>
-      <width>135</width>
+      <y>145</y>
+      <width>148</width>
       <height>92</height>
      </rect>
     </property>

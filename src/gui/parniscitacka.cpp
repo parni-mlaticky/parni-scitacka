@@ -125,7 +125,7 @@ void ParniScitacka::on_ButtonPow_clicked()
     ParniScitacka::ui->Display->setText(QString::fromStdString(Parnilogika::pl->getDisplayOutput()));
 }
 
-void ParniScitacka::on_ButtonSqrt_clicked()
+void ParniScitacka::on_ButtonRoot_clicked()
 {
     Parnilogika::pl->binaryOperation(Parnilogika::pl->ROOT);
     ParniScitacka::ui->Display->setText(QString::fromStdString(Parnilogika::pl->getDisplayOutput()));
@@ -208,7 +208,7 @@ void ParniScitacka::on_actionHistory_triggered()
 
 void ParniScitacka::on_actionAbout_triggered()
 {
-	   QMessageBox::information(this, "About", ABOUT_MESSAGE);
+       QMessageBox::information(this, "About", ABOUT_MESSAGE);
 }
 
 void ParniScitacka::on_ButtonSwitch_clicked()
@@ -217,8 +217,7 @@ void ParniScitacka::on_ButtonSwitch_clicked()
     ParniScitacka::ui->Display->setText(QString::fromStdString(Parnilogika::pl->getDisplayOutput()));
 }
 
-// TODO rename the button and rewrite!
-void ParniScitacka::on_ButtonFunctions_clicked()
+void ParniScitacka::on_ButtonBackspace_clicked()
 {
     Parnilogika::pl->popCollector();
     ParniScitacka::ui->Display->setText(QString::fromStdString(Parnilogika::pl->getDisplayOutput()));
@@ -303,7 +302,7 @@ void ParniScitacka::keyPressEvent(QKeyEvent *event)
         on_ButtonPow_clicked();
         return;
     case Qt::Key_R:
-        on_ButtonSqrt_clicked();
+        on_ButtonRoot_clicked();
         return;
     case Qt::Key_A:
         on_ButtonAns_clicked();
@@ -312,7 +311,7 @@ void ParniScitacka::keyPressEvent(QKeyEvent *event)
         on_ButtonSwitch_clicked();
         return;
     case Qt::Key_Backspace:
-        on_ButtonFunctions_clicked();
+        on_ButtonBackspace_clicked();
         return;
     }
 

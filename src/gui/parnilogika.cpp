@@ -177,6 +177,9 @@ void Parnilogika::invertCollector() {
 	if(collector.size() == 0) {
 		return;
 	}
+	if(collectorToDouble() == 0){
+		return;
+	}
 	if(Parnilogika::isCollectorNegative()) {
 		collector.erase(collector.begin());
 	}
