@@ -73,9 +73,13 @@ cd steammath
 
 ## Autoři
 Parní mlátičky
+
 xzobal01 Ondřej Zobal
+
 xhucov00 Vladimír Hucovič
+
 xkolou05 Petr Kolouch
+
 xhavel46 Marek Havel
 
 ## Licence
